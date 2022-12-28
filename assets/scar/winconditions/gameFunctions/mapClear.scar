@@ -1,0 +1,11 @@
+function MapClear()
+	for i, player in pairs(PLAYERS) do
+		local sg_afval_units = Player_GetSquads(player.id)		
+		SGroup_Kill(sg_afval_units)
+		SGroup_DeSpawn(sg_afval_units)
+		SGroup_Clear(sg_afval_units)		
+		local eg_afval_buildings = Player_GetAllEntities(player.id)	
+		EGroup_DestroyAllEntities(eg_afval_buildings)	
+		EGroup_Destroy(eg_afval_buildings)			
+	end
+end
