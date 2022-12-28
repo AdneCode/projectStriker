@@ -21,7 +21,7 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
-import("gameFunctions/mapClear.scar") --Clears map
+import("gameFunctioins/mapClear.scar") --Clears map
 
 
 
