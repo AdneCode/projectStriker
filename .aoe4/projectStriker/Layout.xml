@@ -9,19 +9,19 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="12/28/2022 17:15:50" />
-        <LayoutDocument Title="projectStriker.scar" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/29/2022 12:57:40" />
-        <LayoutDocument Title="projectStriker.rdo" ContentId="Reflect|Essence.Editor.ReflectEditor.Controls.DefaultReflectControlActivator|0x4614CA658F8AE60D" LastActivationTimeStamp="12/29/2022 12:57:11" />
-        <LayoutDocument Title="currentageui.scar" ContentId="FileName|Script|C:\Users\Adne\AppData\Local\Temp\currentageui.scar" ToolTip="C:\Users\Adne\AppData\Local\Temp\currentageui.scar" LastActivationTimeStamp="12/29/2022 12:57:12" />
-        <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/29/2022 12:55:49" />
-        <LayoutDocument Title="handleTeams.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/29/2022 12:58:41" />
+        <LayoutDocument Title="projectStriker.scar" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/29/2022 13:07:21" />
+        <LayoutDocument Title="projectStriker.rdo" ContentId="Reflect|Essence.Editor.ReflectEditor.Controls.DefaultReflectControlActivator|0x4614CA658F8AE60D" LastActivationTimeStamp="12/29/2022 13:07:21" />
+        <LayoutDocument Title="currentageui.scar" ContentId="FileName|Script|C:\Users\Adne\AppData\Local\Temp\currentageui.scar" ToolTip="C:\Users\Adne\AppData\Local\Temp\currentageui.scar" LastActivationTimeStamp="12/29/2022 13:07:20" />
+        <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/29/2022 13:07:19" />
+        <LayoutDocument Title="handleTeams.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/29/2022 13:09:24" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="07/28/2020 09:55:16" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" IsSelected="True" ContentId="ErrorList" LastActivationTimeStamp="12/29/2022 12:58:41" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="12/29/2022 13:09:14" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" ContentId="ErrorList" LastActivationTimeStamp="12/29/2022 13:09:14" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="07/28/2020 09:55:15" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="12/28/2022 21:07:47" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" ContentId="Globals" LastActivationTimeStamp="12/28/2022 21:07:47" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="12/28/2022 21:07:47" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" IsSelected="True" ContentId="Globals" LastActivationTimeStamp="12/29/2022 13:09:15" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="12/29/2022 13:09:15" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Call Stack" ContentId="CallStack" LastActivationTimeStamp="12/28/2022 21:07:47" />
       </LayoutAnchorablePane>
     </LayoutPanel>

@@ -1,7 +1,7 @@
 import("ScarUtil.scar")							-- Contains game helper functions
 import("cardinal.scar")							-- Contains sfx references, UI templates, and Civ/Age helper functions
 --Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2
-function handleTeams(PLAYERS, teamCount)
+function mapClear(PLAYERS, teamCount)
 	if teamCount == 2 then 
 		return
 	end
