@@ -9,7 +9,7 @@
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
 						<d2p1:string>assets\scar\gameFunctions\mapClear.scar</d2p1:string>
-						<d2p1:string>assets\scar\winconditions</d2p1:string>
+						<d2p1:string>assets\scar\winconditions\projectStriker.scar</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 			</d3p1:ExpandedPaths>
@@ -22,7 +22,7 @@
 					<d3p1:Column>24</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\gameFunctions\handleTeams.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>10</d3p1:Line>
+					<d3p1:Line>11</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -39,7 +39,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\gameFunctions\handleTeams.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>11</d3p1:Line>
+					<d3p1:Line>12</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -57,13 +57,13 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\mapClear.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\surrender.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\currentageui.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\gameFunctions.lua</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
 		</History>

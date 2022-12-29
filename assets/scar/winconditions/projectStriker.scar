@@ -62,14 +62,21 @@ end
 function Mod_OnInit()
 	print("Mod_OnInit")
 	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())	
-	mapClear(PLAYERS)
-	handleTeams(PLAYERS, Core_GetActiveTeamCount())
+	mapClear()
+	handleTeams()
+	--set score
+	score = {}
+	score.team1 = 0
+	score.team2 = 0
+	
 end
 
 -- Called after initialization is done when game is fading up from black
 function Mod_Start()
 	print("Mod_Start")
-	
+	for i, player in pairs(PLAYERS) do
+			spawnUnit("knight", World_Pos(-290, 12, 45), player.id)
+	end
 	
 	
 end

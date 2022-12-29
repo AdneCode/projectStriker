@@ -1,5 +1,5 @@
 --Takes PLAYERS table, clears the map of all their entities
-function mapClear(PLAYERS)
+function mapClear()
 	for i, player in pairs(PLAYERS) do
 		local trashedUnits = Player_GetSquads(player.id)		
 		SGroup_Kill(trashedUnits)
