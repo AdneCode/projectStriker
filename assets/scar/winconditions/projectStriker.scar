@@ -23,7 +23,7 @@ import("gameplay/currentageui.scar")
 --Striker functions
 import("gameFunctions/handleTeams.scar") --Quits the game if there are more than 2 teams
 import("gameFunctions/mapClear.scar") --Clears map
-
+import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
 
 

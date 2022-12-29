@@ -1,0 +1,8 @@
+--Spawns a unit on a given position, unit has the given playerId
+function spawnUnit(position, playerId)
+	local spawnPosition = Util_GetOffsetPosition(position, 20, 10)
+	local sgroupString = "sg_player_first_" .. tostring(playerId)
+	local sgroup = SGroup_CreateIfNotFound(sgroupString)
+	UnitEntry_DeploySquads(playerId, sgroup, {{sbp = sbp_first, numSquads = 1 }}, spawnPosition)
+	SGroup_Clear(sgroup)
+end

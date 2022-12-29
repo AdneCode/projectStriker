@@ -7,8 +7,8 @@ function handleTeams(PLAYERS, teamCount)
 	end
 	for i, player in pairs(PLAYERS) do
 		local teamId = player.team.index
-		if teamId > 2 then
-			Core_SetPlayerDefeated(player.id)
+		if teamId > 2 then			
+			Core_SetPlayerDefeated(player.id, Annihilation_LoserPresentation, WR_ANNIHILATION)
 		end
 	end
 end
