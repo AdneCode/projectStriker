@@ -20,7 +20,8 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
-import("gameFunctions/handleTeams.scar") --Quits the game if there are more than 2 teams
+import("gameFunctions/handleCivs.scar") --Kicks people not HRE
+import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/mapClear.scar") --Clears map
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
@@ -62,11 +63,8 @@ function Mod_OnInit()
 	print("Mod_OnInit")
 	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())	
 	mapClear()
+	handleCivs()
 	teams = handleTeams()
-	--set score to 0 at start
-	score = {}
-	score.team1 = 0
-	score.team2 = 0
 end
 
 -- Called after initialization is done when game is fading up from black

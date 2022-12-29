@@ -1,0 +1,9 @@
+--Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2. Finally, returns the teams.
+function handleCivs()
+	for i, player in pairs(PLAYERS) do
+		local playerCiv = player.raceName
+		if playerCiv ~= "hre" then			
+			Core_SetPlayerDefeated(player.id, Annihilation_LoserPresentation, WR_ANNIHILATION)
+		end
+	end
+end
