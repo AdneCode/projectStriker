@@ -21,7 +21,7 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
-import("gameFunctions/mapClear.scar") --Clears map
+import("./gameFunctions/mapClear.scar") --Clears map
 
 
 
@@ -61,9 +61,8 @@ end
 function Mod_OnInit()
 	print("Mod_OnInit")
 	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())
+	mapClear()
 	
-	mapClear(PLAYERS)
-	handleTeams(PLAYERS, Core_GetActiveTeamCount())
 end
 
 -- Called after initialization is done when game is fading up from black

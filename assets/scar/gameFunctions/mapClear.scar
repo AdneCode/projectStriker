@@ -1,0 +1,12 @@
+--Takes PLAYERS table, clears the map of all their entities
+function mapClear(PLAYERS)
+	for i, player in pairs(PLAYERS) do
+		local trashedUnits = Player_GetSquads(player.id)		
+		SGroup_Kill(trashedUnits)
+		SGroup_DeSpawn(trashedUnits)
+		SGroup_Clear(trashedUnits)		
+		local trashedBuildings = Player_GetAllEntities(player.id)	
+		EGroup_DestroyAllEntities(trashedBuildings)	
+		EGroup_Destroy(trashedBuildings)			
+	end
+end

@@ -1,0 +1,16 @@
+
+--Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2
+function mapClear(PLAYERS, teamCount)
+	if teamCount == 2 then 
+		return
+	end
+	for i, player in pairs(PLAYERS) do
+		local trashedUnits = Player_GetSquads(player.id)		
+		SGroup_Kill(trashedUnits)
+		SGroup_DeSpawn(trashedUnits)
+		SGroup_Clear(trashedUnits)		
+		local trashedBuildings = Player_GetAllEntities(player.id)	
+		EGroup_DestroyAllEntities(trashedBuildings)	
+		EGroup_Destroy(trashedBuildings)			
+	end
+end

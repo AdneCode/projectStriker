@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProjectSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Essence.Editor.Core">
 	<LastDocumentDirectory i:nil="true" />
-	<LastDocumentType>Lua</LastDocumentType>
+	<LastDocumentType>Script</LastDocumentType>
 	<PluginSettings xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 		<d2p1:anyType xmlns:d3p1="http://schemas.datacontract.org/2004/07/Essence.Editor.Controls" i:type="d3p1:FileExplorerProjectSettings">
 			<d3p1:ExpandedPaths>
 				<d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
-						<d2p1:string>assets\scar\winconditions\gameFunctions</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\mapClear.scar</d2p1:string>
+						<d2p1:string>assets\scar\winconditions</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 			</d3p1:ExpandedPaths>
@@ -21,9 +22,13 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\mapClear.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\gameFunctions.lua</d3p1:string>
+			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\surrender.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\currentageui.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\gameFunctions.lua</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
 		</History>
 	</RecentFiles>
