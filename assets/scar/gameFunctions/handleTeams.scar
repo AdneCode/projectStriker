@@ -6,8 +6,9 @@ function handleTeams(PLAYERS, teamCount)
 		return
 	end
 	for i, player in pairs(PLAYERS) do
-		team = Player_GetTeam(player)
-		print(team)
-		return 		
+		local teamId = player.team.index
+		if teamId > 2 then
+			Core_SetPlayerDefeated(player.id)
+		end
 	end
 end

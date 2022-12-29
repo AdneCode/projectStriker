@@ -21,6 +21,7 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
+import("gameFunctions/handleTeams.scar") --Quits the game if there are more than 2 teams
 import("gameFunctions/mapClear.scar") --Clears map
 
 
@@ -60,8 +61,7 @@ end
 -- Called on match initialization before handing control to the player
 function Mod_OnInit()
 	print("Mod_OnInit")
-	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())
-	
+	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())	
 	mapClear(PLAYERS)
 	handleTeams(PLAYERS, Core_GetActiveTeamCount())
 end
