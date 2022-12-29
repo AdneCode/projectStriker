@@ -1,6 +1,9 @@
 --Spawns a unit on a given position, unit has the given playerId
 function spawnUnit(unit, position, playerId)
 	local unitSbp = getUnitSbp(unit)
+	if unitSbp == nil then
+		return
+	end
 	local spawnPosition = Util_GetOffsetPosition(position, 20, 10)
 	local sgroupString = "sg_player_first_" .. tostring(playerId)
 	local sgroup = SGroup_CreateIfNotFound(sgroupString)
@@ -18,4 +21,5 @@ function getUnitSbp(unit)
 	if unit == "spear" then
 		return BP_GetSquadBlueprint("unit_spearman_3_hre")
 	end
+	return nil
 end

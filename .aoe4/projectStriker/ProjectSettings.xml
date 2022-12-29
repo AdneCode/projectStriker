@@ -22,7 +22,7 @@
 					<d3p1:Column>24</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\gameFunctions\handleTeams.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>11</d3p1:Line>
+					<d3p1:Line>8</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -39,7 +39,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\gameFunctions\handleTeams.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>12</d3p1:Line>
+					<d3p1:Line>9</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>

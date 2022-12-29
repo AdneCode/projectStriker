@@ -1,15 +1,19 @@
 import("ScarUtil.scar")							-- Contains game helper functions
 import("cardinal.scar")							-- Contains sfx references, UI templates, and Civ/Age helper functions
---Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2
+--Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2. Finally, returns the teams.
 function handleTeams()
-	local teamCount = Core_GetActiveTeamCount()
-	if teamCount == 2 then 
-		return
-	end
+	local teams = {}
 	for i, player in pairs(PLAYERS) do
 		local teamId = player.team.index
 		if teamId > 2 then			
 			Core_SetPlayerDefeated(player.id, Annihilation_LoserPresentation, WR_ANNIHILATION)
 		end
+		if teamId == 1 then
+			table.insert(teams, 1, player)
+		end
+		if teamId == 2 then
+			table.insert(teams, 2, player)
+		end
 	end
+	return teams
 end
