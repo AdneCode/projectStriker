@@ -57,6 +57,7 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getStartLocations.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar</d3p1:string>
@@ -66,7 +67,6 @@
 			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\surrender.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\AppData\Local\Temp\currentageui.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\gameFunctions\gameFunctions.lua</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
 		</History>
 	</RecentFiles>
 </ProjectSettings>

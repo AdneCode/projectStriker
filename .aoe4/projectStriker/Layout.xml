@@ -9,11 +9,12 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="12/30/2022 15:43:18" />
-        <LayoutDocument Title="projectStriker.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/30/2022 15:43:18" />
+        <LayoutDocument Title="projectStriker.scar" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/30/2022 15:43:18" />
         <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/30/2022 15:43:17" />
         <LayoutDocument Title="handleTeams.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/30/2022 15:43:16" />
         <LayoutDocument Title="spawnUnit.scar" ContentId="FileName|Script|assets\scar\gameFunctions\spawnUnit.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar" LastActivationTimeStamp="12/30/2022 15:43:16" />
         <LayoutDocument Title="handleCivs.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleCivs.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar" LastActivationTimeStamp="12/30/2022 15:43:13" />
+        <LayoutDocument Title="getStartLocations.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\getStartLocations.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getStartLocations.scar" LastActivationTimeStamp="12/30/2022 15:45:17" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" IsSelected="True" ContentId="Output" LastActivationTimeStamp="12/29/2022 23:10:45" />
