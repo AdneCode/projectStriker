@@ -9,11 +9,11 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="12/28/2022 17:15:50" />
-        <LayoutDocument Title="projectStriker.scar*" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/29/2022 23:17:55" />
+        <LayoutDocument Title="projectStriker.scar" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/29/2022 23:19:17" />
         <LayoutDocument Title="projectStriker.rdo" ContentId="Reflect|Essence.Editor.ReflectEditor.Controls.DefaultReflectControlActivator|0x4614CA658F8AE60D" LastActivationTimeStamp="12/29/2022 23:10:51" />
         <LayoutDocument Title="currentageui.scar" ContentId="FileName|Script|C:\Users\Adne\AppData\Local\Temp\currentageui.scar" ToolTip="C:\Users\Adne\AppData\Local\Temp\currentageui.scar" LastActivationTimeStamp="12/29/2022 14:25:29" />
         <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/29/2022 22:49:27" />
-        <LayoutDocument Title="handleTeams.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/29/2022 23:18:00" />
+        <LayoutDocument Title="handleTeams.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/29/2022 23:19:51" />
         <LayoutDocument Title="spawnUnit.scar" ContentId="FileName|Script|assets\scar\gameFunctions\spawnUnit.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar" LastActivationTimeStamp="12/29/2022 23:06:22" />
         <LayoutDocument Title="handleCivs.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleCivs.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar" LastActivationTimeStamp="12/29/2022 23:06:21" />
       </LayoutDocumentPane>
@@ -24,7 +24,7 @@
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="12/29/2022 13:35:03" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="12/29/2022 23:14:18" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="12/29/2022 23:16:39" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" IsSelected="True" ContentId="Globals" LastActivationTimeStamp="12/29/2022 23:17:46" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" IsSelected="True" ContentId="Globals" LastActivationTimeStamp="12/29/2022 23:19:50" />
       </LayoutAnchorablePane>
     </LayoutPanel>
     <LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" DockHeight="200">
