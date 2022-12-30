@@ -9,7 +9,7 @@
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
 						<d2p1:string>assets\scar\gameFunctions</d2p1:string>
-						<d2p1:string>assets\scar\winconditions</d2p1:string>
+						<d2p1:string>assets\scar\winconditions\projectStriker.scar</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 			</d3p1:ExpandedPaths>
@@ -57,8 +57,8 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar</d3p1:string>

@@ -76,11 +76,14 @@ function Mod_Start()
 		Player_SetResource(player.id, RT_Gold, 0)
 		Player_SetResource(player.id, RT_Stone, 0)
 	end
-	for i, player in pairs(PLAYERS) do
-			spawnUnit("knight", World_Pos(-290, 12, 45), player.id)
+	for i, player in pairs(teams.team1) do
+		spawnUnit("knight", World_Pos(0, 0, 45), player.id)
+		spawnUnit("spear", World_Pos(0, 0, 45), player.id)
 	end
-	
-	
+	for i, player in pairs(teams.team2) do
+		spawnUnit("knight", World_Pos(-290, 12, 45), player.id)
+		spawnUnit("spear", World_Pos(-290, 12, 45), player.id)
+	end
 end
 
 -- Called when Core_SetPlayerDefeated() is invoked. Signals that a player has been eliminated from play due to defeat.
