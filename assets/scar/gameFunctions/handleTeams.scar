@@ -17,6 +17,7 @@ function handleTeams()
 			table.insert(teams.team2, player)
 		end
 	end
+	
 	teams.score = {}
 	teams.score.team1 = 0
 	teams.score.team2 = 0

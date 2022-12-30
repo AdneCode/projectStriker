@@ -21,6 +21,7 @@ import("gameplay/currentageui.scar")
 
 --Striker functions
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
+--import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/mapClear.scar") --Clears map
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
@@ -65,6 +66,47 @@ function Mod_OnInit()
 	mapClear()
 	handleCivs()
 	teams = handleTeams()
+	Rule_AddGlobalEvent(handleTackle, GE_DamageReceived)
+end
+
+function handleTackle(ctx)
+	local attackingPlayer = ctx.attackerOwner
+	local attackerUnit = ctx.attacker
+	local tackledUnit = ctx.victimSquad
+	local tackledPlayer = ctx.victimOwner
+	if attackingPlayer == nil or attackerUnit == nil or tackledUnit == nil or tackledPlayer == nil then
+		return
+	end
+	local attackerLocation = Entity_GetPosition(attackerUnit)
+	team = getTeamFromPlayer(attackingPlayer)
+	if team == nil then 
+		return 
+	end
+	if team == "team1" then
+		attackerLocation.y = attackerLocation.y - 20
+	end
+	if team == "team2" then
+		attackerLocation.y = attackerLocation.y + 20
+	end
+	Entity_SetPosition(attackerUnit, attackerLocation)
+	--local attackingUnit = SGroup_FilterSpawned(attackerUnits, "sheep" )
+	
+	--SGroup_DeSpawn(tackledUnit)
+end
+
+function getTeamFromPlayer(player)
+	local team = nil
+	for i, player in pairs(teams.team1) do
+		if PlayerID == player.id.PlayerID then
+			team = "team1"			
+		end
+	end
+	for i, player in pairs(teams.team2) do
+		if PlayerID == player.id.PlayerID then
+			team = "team2"
+		end
+	end
+	return team
 end
 
 -- Called after initialization is done when game is fading up from black
@@ -75,14 +117,20 @@ function Mod_Start()
 		Player_SetResource(player.id, RT_Wood, 0)
 		Player_SetResource(player.id, RT_Gold, 0)
 		Player_SetResource(player.id, RT_Stone, 0)
+		--FOW_RevealArea(World_Pos(0, 0, 45), 10200, 4)
+		
 	end
+	FOW_RevealAll()
+	
 	for i, player in pairs(teams.team1) do
 		spawnUnit("knight", World_Pos(0, 0, 45), player.id)
 		spawnUnit("spear", World_Pos(0, 0, 45), player.id)
+		spawnUnit("monk", World_Pos(0, 0, 45), player.id)
 	end
 	for i, player in pairs(teams.team2) do
-		spawnUnit("knight", World_Pos(-290, 12, 45), player.id)
-		spawnUnit("spear", World_Pos(-290, 12, 45), player.id)
+		spawnUnit("knight", World_Pos(0, 12, 45), player.id)
+		spawnUnit("spear", World_Pos(0, 12, 45), player.id)
+		spawnUnit("monk", World_Pos(0, 12, 45), player.id)
 	end
 end
 

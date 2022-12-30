@@ -3,22 +3,24 @@
   <RootPanel Orientation="Horizontal">
     <LayoutAnchorablePaneGroup Orientation="Horizontal" DockWidth="300" FloatingWidth="300" FloatingHeight="800" FloatingLeft="200" FloatingTop="200">
       <LayoutAnchorablePane DockHeight="200" FloatingWidth="300" FloatingHeight="800" FloatingLeft="200" FloatingTop="200">
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Asset Explorer" IsSelected="True" ContentId="EssenceEditor.AssetExplorer" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="12/30/2022 15:43:47" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="1" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Asset Explorer" IsSelected="True" ContentId="EssenceEditor.AssetExplorer" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="12/30/2022 18:51:43" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="1" />
       </LayoutAnchorablePane>
     </LayoutAnchorablePaneGroup>
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="12/30/2022 15:43:18" />
-        <LayoutDocument Title="projectStriker.scar" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/30/2022 15:43:18" />
-        <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/30/2022 15:43:17" />
-        <LayoutDocument Title="handleTeams.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/30/2022 15:43:16" />
-        <LayoutDocument Title="spawnUnit.scar" ContentId="FileName|Script|assets\scar\gameFunctions\spawnUnit.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar" LastActivationTimeStamp="12/30/2022 15:43:16" />
-        <LayoutDocument Title="handleCivs.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleCivs.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar" LastActivationTimeStamp="12/30/2022 15:43:13" />
-        <LayoutDocument Title="getStartLocations.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\gameFunctions\getStartLocations.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getStartLocations.scar" LastActivationTimeStamp="12/30/2022 15:45:17" />
+        <LayoutDocument Title="projectStriker.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\winconditions\projectStriker.scar" LastActivationTimeStamp="12/30/2022 19:02:26" />
+        <LayoutDocument Title="mapClear.scar" ContentId="FileName|Script|assets\scar\gameFunctions\mapClear.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\mapClear.scar" LastActivationTimeStamp="12/30/2022 18:16:37" />
+        <LayoutDocument Title="handleTeams.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="12/30/2022 18:57:47" />
+        <LayoutDocument Title="spawnUnit.scar" ContentId="FileName|Script|assets\scar\gameFunctions\spawnUnit.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar" LastActivationTimeStamp="12/30/2022 19:02:16" />
+        <LayoutDocument Title="handleCivs.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleCivs.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar" LastActivationTimeStamp="12/30/2022 17:55:48" />
+        <LayoutDocument Title="getStartLocations.scar" ContentId="FileName|Script|assets\scar\gameFunctions\getStartLocations.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getStartLocations.scar" LastActivationTimeStamp="12/30/2022 17:55:47" />
+        <LayoutDocument Title="handleTackle.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTackle.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTackle.scar" LastActivationTimeStamp="12/30/2022 18:52:02" />
+        <LayoutDocument Title="getTeamFromPlayer.scar" ContentId="FileName|Script|assets\scar\gameFunctions\getTeamFromPlayer.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getTeamFromPlayer.scar" LastActivationTimeStamp="12/30/2022 18:52:05" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" IsSelected="True" ContentId="Output" LastActivationTimeStamp="12/29/2022 23:10:45" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" ContentId="ErrorList" LastActivationTimeStamp="12/29/2022 22:34:47" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="12/30/2022 18:55:07" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" IsSelected="True" ContentId="ErrorList" LastActivationTimeStamp="12/30/2022 19:01:51" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="12/29/2022 13:35:03" />
       </LayoutAnchorablePane>
     </LayoutPanel>
@@ -40,11 +42,11 @@
   <BottomSide />
   <FloatingWindows />
   <Hidden>
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Transformation" IsSelected="True" ContentId="ScenarioEditor.Transformation" FloatingLeft="200" FloatingTop="200" FloatingWidth="250" FloatingHeight="300" LastActivationTimeStamp="12/30/2022 15:30:27" PreviousContainerId="78c06263-eb86-40c1-8abf-6d89a3781df0" PreviousContainerIndex="0" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Painter" IsSelected="True" ContentId="ScenarioEditor.Painter" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="12/30/2022 15:30:27" PreviousContainerId="6038d019-bb6b-408c-b77e-0a790ca2f17f" PreviousContainerIndex="1" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="12/29/2022 23:14:18" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="4" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" ContentId="Globals" LastActivationTimeStamp="12/30/2022 15:37:58" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="5" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="12/29/2022 23:16:39" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="4" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Call Stack" ContentId="CallStack" LastActivationTimeStamp="12/29/2022 23:16:39" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="2" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Transformation" IsSelected="True" ContentId="ScenarioEditor.Transformation" FloatingLeft="200" FloatingTop="200" FloatingWidth="250" FloatingHeight="300" LastActivationTimeStamp="12/30/2022 17:51:30" PreviousContainerId="78c06263-eb86-40c1-8abf-6d89a3781df0" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Painter" IsSelected="True" ContentId="ScenarioEditor.Painter" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="12/30/2022 17:51:30" PreviousContainerId="6038d019-bb6b-408c-b77e-0a790ca2f17f" PreviousContainerIndex="1" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="12/30/2022 18:55:05" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="4" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" ContentId="Globals" LastActivationTimeStamp="12/30/2022 18:59:02" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="5" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="12/30/2022 18:59:01" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="4" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Call Stack" ContentId="CallStack" LastActivationTimeStamp="12/30/2022 18:55:05" PreviousContainerId="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" PreviousContainerIndex="2" />
   </Hidden>
 </LayoutRoot>
