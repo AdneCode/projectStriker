@@ -41,6 +41,13 @@ _mod = {
 -- Register the win condition (Some functions can be prepended with "Mod_" to be called automatically as part of the scripting framework)
 Core_RegisterModule(_mod.module)
 
+
+
+
+-----------------------------------------------------------------------
+-- Constants  
+-----------------------------------------------------------------------
+
 -----------------------------------------------------------------------
 -- Scripting framework 
 -----------------------------------------------------------------------
@@ -75,6 +82,7 @@ function handleTackle(ctx)
 	local attackerUnit = ctx.attacker
 	local tackledUnit = ctx.victim
 	local tackledPlayer = ctx.victimOwner
+	local tackledSquad = ctx.victimSquad
 	if attackingPlayer == nil or attackerUnit == nil or tackledUnit == nil or tackledPlayer == nil then
 		return
 	end
@@ -84,27 +92,44 @@ function handleTackle(ctx)
 	if attackerTeam == nil then 
 		return 
 	end
+	local attackerOffset = 3
+	local tackledOffset = 45
 	if Entity_IsOfType(attackerUnit, "cavalry") and Entity_IsOfType(tackledUnit, "monk") then
 		if attackerTeam == "team1" then
-			attackerLocation.x = attackerLocation.x - 5
-			tackledLocation.x = tackledLocation.x + 15
+			attackerLocation.x = attackerLocation.x - attackerOffset
+			tackledLocation.x = tackledLocation.x + tackledOffset
 			
 		end
 		if attackerTeam == "team2" then
-			attackerLocation.x = attackerLocation.x + 5
-			tackledLocation.x = tackledLocation.x - 15
+			attackerLocation.x = attackerLocation.x + attackerOffset
+			tackledLocation.x = tackledLocation.x - tackledOffset
 		end
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
+		
+		local relicCarry = BP_GetAbilityBlueprint("monk_holding_relic")
+		local relicDrop = BP_GetAbilityBlueprint("monk_statetree_drop_relic")
+		--local test1 = Entity_IsDoingAbility(tackledUnit, relicCarry)
+		--local test2 = Entity_IsAbilityActive(tackledUnit, relicCarry)
+		--local test3 = Entity_HasAbility(tackledUnit, relicCarry)
+		--local test4 = Entity_IsHoldingAny(tackledUnit)
+		--local test6 = Squad_CanHold(tackledSquad)
+		--local test7 = Squad_IsAbilityActive_CS(tackledSquad, relicCarry)		
+		local sgroupMonk = SGroup_CreateIfNotFound("Monkas")
+		SGroup_Add(sgroupMonk, tackledSquad)
+		LocalCommand_SquadAbility(tackledPlayer, sgroupMonk, relicDrop, true, false)
+		local test5 = SGroup_IsDoingAbility(sgroupMonk, relicCarry, false)
+		SGroup_Clear(sgroupMonk)
+	
 	end
 	if Entity_IsOfType(attackerUnit, "spearman") and Entity_IsOfType(tackledUnit, "cavalry") then
 		if attackerTeam == "team1" then
-			attackerLocation.x = attackerLocation.x - 5
-			tackledLocation.x = tackledLocation.x + 15			
+			attackerLocation.x = attackerLocation.x - attackerOffset
+			tackledLocation.x = tackledLocation.x + tackledOffset			
 		end
 		if attackerTeam == "team2" then
-			attackerLocation.x = attackerLocation.x + 5
-			tackledLocation.x = tackledLocation.x - 15
+			attackerLocation.x = attackerLocation.x + attackerOffset
+			tackledLocation.x = tackledLocation.x - tackledOffset
 		end
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
@@ -124,6 +149,7 @@ function Mod_Start()
 		Player_SetResource(player.id, RT_Wood, 0)
 		Player_SetResource(player.id, RT_Gold, 0)
 		Player_SetResource(player.id, RT_Stone, 0)
+		Player_SetCurrentAge(player.id, 4)
 		--FOW_RevealArea(World_Pos(0, 0, 45), 10200, 4)
 		
 	end
@@ -131,12 +157,16 @@ function Mod_Start()
 	
 	for i, player in pairs(teams.team1) do
 		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
-		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
+		--spawnUnit("spear", World_Pos(33, 12, 45), player.id)
+		spawnUnit("monk", World_Pos(33, 12, 45), player.id)
+		spawnUnit("monk", World_Pos(33, 12, 45), player.id)
 		spawnUnit("monk", World_Pos(33, 12, 45), player.id)
 	end
 	for i, player in pairs(teams.team2) do
 		spawnUnit("knight", World_Pos(0, 12, 1), player.id)
-		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
+		--spawnUnit("spear", World_Pos(0, 12, 1), player.id)
+		spawnUnit("monk", World_Pos(0, 12, 1), player.id)
+		spawnUnit("monk", World_Pos(0, 12, 1), player.id)
 		spawnUnit("monk", World_Pos(0, 12, 1), player.id)
 	end
 end

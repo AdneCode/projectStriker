@@ -43,7 +43,21 @@
 			<DataValue Name="PrecacheList">4621369252002233672</DataValue>
 			<!--WinCondition/PrecacheList/-->
 			<DataObject Name="" Type="PrecacheList" Id="4621369252002233672" OwnerId="5049883619737921037">
-				<DataProperty Name="m_precacheItems" Type="Object"/>
+				<DataProperty Name="m_precacheItems" Type="Object">
+					<DataValue Name="EntityPrecacheItem">15562600493518975461</DataValue>
+					<!--WinCondition/PrecacheList/EntityPrecacheItem/-->
+					<DataObject Name="" Type="EntityPrecacheItem" Id="15562600493518975461" OwnerId="4621369252002233672">
+						<DataProperty Name="#BaseTypes" Type="String" Value="IPrecacheItem#0|"/>
+						<DataProperty Name="m_blueprint" Type="Object">
+							<DataValue Name="ReflectPBG_EntityProperties">15207517769905124790</DataValue>
+							<!--WinCondition/PrecacheList/EntityPrecacheItem/ReflectPBG_EntityProperties/-->
+							<DataObject Name="" Type="ReflectPBG_EntityProperties" Id="15207517769905124790" OwnerId="15562600493518975461">
+								<DataProperty Name="#BaseTypes" Type="String" Value="PropertyBagGroupReflectReference#0|Provider_PropertyBagGroup#0|"/>
+								<DataProperty Name="m_fileName" Type="String" Value="unit_spearman_3_hre"/>
+							</DataObject>
+						</DataProperty>
+					</DataObject>
+				</DataProperty>
 			</DataObject>
 		</DataProperty>
 		<DataProperty Name="m_name" Type="String" Value="projectstriker"/>
@@ -54,3 +68,4 @@
 		<DataProperty Name="m_feImageUnselected" Type="String" Value=""/>
 	</DataObject>
 </DataWarehouse>
+
