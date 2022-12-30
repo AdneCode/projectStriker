@@ -1,3 +1,14 @@
-function getTeamFromPlayer(player)
-	
+function getTeamFromPlayer(inputPlayer)
+	local team = nil
+	for i, player in pairs(teams.team1) do
+		if inputPlayer.PlayerID == player.id.PlayerID then
+			team = "team1"			
+		end
+	end
+	for i, player in pairs(teams.team2) do
+		if inputPlayer.PlayerID == player.id.PlayerID then
+			team = "team2"
+		end
+	end
+	return team
 end

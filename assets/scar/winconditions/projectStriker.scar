@@ -20,6 +20,7 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
+import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
@@ -72,42 +73,48 @@ end
 function handleTackle(ctx)
 	local attackingPlayer = ctx.attackerOwner
 	local attackerUnit = ctx.attacker
-	local tackledUnit = ctx.victimSquad
+	local tackledUnit = ctx.victim
 	local tackledPlayer = ctx.victimOwner
 	if attackingPlayer == nil or attackerUnit == nil or tackledUnit == nil or tackledPlayer == nil then
 		return
 	end
 	local attackerLocation = Entity_GetPosition(attackerUnit)
-	team = getTeamFromPlayer(attackingPlayer)
-	if team == nil then 
+	local tackledLocation = Entity_GetPosition(tackledUnit)
+	local attackerTeam = getTeamFromPlayer(attackingPlayer)
+	if attackerTeam == nil then 
 		return 
 	end
-	if team == "team1" then
-		attackerLocation.y = attackerLocation.y - 20
+	if Entity_IsOfType(attackerUnit, "cavalry") and Entity_IsOfType(tackledUnit, "monk") then
+		if attackerTeam == "team1" then
+			attackerLocation.x = attackerLocation.x - 5
+			tackledLocation.x = tackledLocation.x + 15
+			
+		end
+		if attackerTeam == "team2" then
+			attackerLocation.x = attackerLocation.x + 5
+			tackledLocation.x = tackledLocation.x - 15
+		end
+		Entity_SetPosition(attackerUnit, attackerLocation)
+		Entity_SetPosition(tackledUnit, tackledLocation)
 	end
-	if team == "team2" then
-		attackerLocation.y = attackerLocation.y + 20
+	if Entity_IsOfType(attackerUnit, "spearman") and Entity_IsOfType(tackledUnit, "cavalry") then
+		if attackerTeam == "team1" then
+			attackerLocation.x = attackerLocation.x - 5
+			tackledLocation.x = tackledLocation.x + 15			
+		end
+		if attackerTeam == "team2" then
+			attackerLocation.x = attackerLocation.x + 5
+			tackledLocation.x = tackledLocation.x - 15
+		end
+		Entity_SetPosition(attackerUnit, attackerLocation)
+		Entity_SetPosition(tackledUnit, tackledLocation)
 	end
-	Entity_SetPosition(attackerUnit, attackerLocation)
 	--local attackingUnit = SGroup_FilterSpawned(attackerUnits, "sheep" )
 	
 	--SGroup_DeSpawn(tackledUnit)
 end
 
-function getTeamFromPlayer(player)
-	local team = nil
-	for i, player in pairs(teams.team1) do
-		if PlayerID == player.id.PlayerID then
-			team = "team1"			
-		end
-	end
-	for i, player in pairs(teams.team2) do
-		if PlayerID == player.id.PlayerID then
-			team = "team2"
-		end
-	end
-	return team
-end
+
 
 -- Called after initialization is done when game is fading up from black
 function Mod_Start()
@@ -123,14 +130,14 @@ function Mod_Start()
 	FOW_RevealAll()
 	
 	for i, player in pairs(teams.team1) do
-		spawnUnit("knight", World_Pos(0, 0, 45), player.id)
-		spawnUnit("spear", World_Pos(0, 0, 45), player.id)
-		spawnUnit("monk", World_Pos(0, 0, 45), player.id)
+		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
+		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
+		spawnUnit("monk", World_Pos(33, 12, 45), player.id)
 	end
 	for i, player in pairs(teams.team2) do
-		spawnUnit("knight", World_Pos(0, 12, 45), player.id)
-		spawnUnit("spear", World_Pos(0, 12, 45), player.id)
-		spawnUnit("monk", World_Pos(0, 12, 45), player.id)
+		spawnUnit("knight", World_Pos(0, 12, 1), player.id)
+		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
+		spawnUnit("monk", World_Pos(0, 12, 1), player.id)
 	end
 end
 
