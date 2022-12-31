@@ -1,0 +1,3 @@
+function getKickDirection(kickLocation, deerLocation)
+	
+end
