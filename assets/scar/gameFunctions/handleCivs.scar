@@ -1,4 +1,4 @@
---Takes PLAYERS table and teamCount, eliminates the players not in team 1 or team 2. Finally, returns the teams.
+--Any player not HRE receives defeat, void
 function handleCivs()
 	for i, player in pairs(PLAYERS) do
 		local playerCiv = player.raceName

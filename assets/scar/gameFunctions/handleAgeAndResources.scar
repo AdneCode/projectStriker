@@ -1,3 +1,4 @@
+--Sets all resources to 0, sets age to IV. Takes a playerId
 function handleAgeAndResources(playerId)
 	Player_SetResource(playerId, RT_Food, 0)		
 	Player_SetResource(playerId, RT_Wood, 0)

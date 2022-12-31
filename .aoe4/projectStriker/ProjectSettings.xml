@@ -9,7 +9,7 @@
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
 						<d2p1:string>assets\locdb</d2p1:string>
-						<d2p1:string>assets\scar\gameFunctions</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\handleCivs.scar</d2p1:string>
 						<d2p1:string>assets\scar\winconditions</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
@@ -143,6 +143,7 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleCivs.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleAgeAndResources.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getKickDirection.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTackle.scar</d3p1:string>
@@ -152,7 +153,6 @@
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\mod.rdo</d3p1:string>
 			<d3p1:string>C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\cardinal\archives\Data.sga</d3p1:string>
 			<d3p1:string>C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\cardinal\archives\Art.sga</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\locdb\projectStriker.locdb</d3p1:string>
 		</History>
 	</RecentFiles>
 </ProjectSettings>
