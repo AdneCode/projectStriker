@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Essence.Editor.Modding">
+	<DataGenericPath>assets</DataGenericPath>
+	<DataIntermediatePath>cache</DataIntermediatePath>
+	<ID>faefe4b8-f167-4f43-a052-76f8c958cd7e</ID>
+	<LocDBPath>locdb\projectStrikerMap.locdb</LocDBPath>
+	<Type>Extension</Type>
+</Mod>
