@@ -1,3 +1,16 @@
 function getKickDirection(kickLocation, deerLocation)
-	
+	local kickDirection = nil
+	if kickLocation.x <= deerLocation.x and kickLocation.z <= deerLocation.z then
+		kickDirection = "north"
+	end
+	if kickLocation.x <= deerLocation.x and kickLocation.z >= deerLocation.z then
+		kickDirection = "east"
+	end
+	if kickLocation.x >= deerLocation.x and kickLocation.z >= deerLocation.z then
+		kickDirection = "south"
+	end
+	if kickLocation.x >= deerLocation.x and kickLocation.z <= deerLocation.z then
+		kickDirection = "west"
+	end
+	return kickDirection
 end

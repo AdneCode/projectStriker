@@ -21,14 +21,15 @@ import("gameplay/currentageui.scar")
 
 --Striker functions
 import("gameFunctions/getAttackType.scar") --Checks if someone is team 1 or 2
---import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
+--import("gameFunctions/getKickAngle.scar") --Calculaters input angle of a deer kick
+import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
 import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
 import("gameFunctions/handleAgeAndResources.scar") --sets resources to 0 and age to 4
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/mapClear.scar") --Clears map
-import("gameFunctions/spawnDeer.scar") --Spawns the ball
+import("gameFunctions/spawnDeer.scar") --Spawns the deer
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
 
@@ -135,49 +136,55 @@ function handleDamage(ctx)
 	if attackType == "cavToBall" or attackType == "spearToBall" or attackType == "manToBall" then
 		local kickDirection = getKickDirection(attackerLocation, tackledLocation)
 		local kickAngle = getKickAngle(attackerLocation, tackledLocation, kickDirection)
-		if Entity_IsOfType(attackerUnit, "spearman") then
-			
-		end
+		setNewDeerPosition(attackerLocation, tackledLocation, tackledUnit, kickDirection, kickAngle, attackType)
 		--SGroup_DeSpawn(tackledUnit)
 	end
 end
 
-function getKickDirection(kickLocation, deerLocation)
-	local kickDirection = nil
-	if kickLocation.x <= deerLocation.x and kickLocation.z <= deerLocation.z then
-		kickDirection = "north"
-	end
-	if kickLocation.x <= deerLocation.x and kickLocation.z >= deerLocation.z then
-		kickDirection = "east"
-	end
-	if kickLocation.x >= deerLocation.x and kickLocation.z >= deerLocation.z then
-		kickDirection = "south"
-	end
-	if kickLocation.x >= deerLocation.x and kickLocation.z <= deerLocation.z then
-		kickDirection = "west"
-	end
-	return kickDirection
+function getKickAngle(kickLocation, deerLocation, kickDirection)
+	local xLength = math.abs(deerLocation.x - kickLocation.x)
+	local zLength = math.abs(deerLocation.z - kickLocation.z)
+	local angle = math.atan(xLength/zLength)
+	return angle
 end
 
-function getKickAngle(kickLocation, deerLocation, kickDirection)
-	local angle = nil
-	if kickDirection == "north" then
-		local xLength = math.abs(deerLocation.x - kickLocation.x)
-		local zLength = math.abs(deerLocation.z - kickLocation.z)
-		angle = math.atan(zLength/xLength)
+function setNewDeerPosition(kickLocation, deerLocation, ball, kickDirection, kickAngle, attackType)
+	--Distance ball and kicker are travelling
+	local ballOffSet = nil
+	local kickerOffSet = 3
+	if attackType == "cavToBall" then
+		ballOffSet = 10
 	end
-	if kickDirection == "east" then
-		local xLength = math.abs(deerLocation.x - kickLocation.x)
-		local zLength = math.abs(kickLocation.z - deerLocation.z)
-		angle = math.atan(zLength/xLength)
+	if attackType == "manToBall" then
+		ballOffSet = 20
 	end
+	if attackType == "spearToBall" then
+		ballOffSet = 25
+	end	
 	
-	if kickDirection == "west" then
-		local xLength = math.abs(kickLocation.x - deerLocation.x)
-		local zLength = math.abs(kickLocation.z - deerLocation.z)
-		angle = math.atan(zLength/xLength)
+	local xLength = math.sin(kickAngle) * ballOffSet
+	local zLength = math.cos(kickAngle) * ballOffSet
+	local newDeerLocation = deerLocation
+	if kickDirection == "north" then		
+		newDeerLocation.x = newDeerLocation.x + xLength
+		newDeerLocation.z = newDeerLocation.z + zLength
+	end	
+	if kickDirection == "east" then		
+		newDeerLocation.x = newDeerLocation.x + xLength
+		newDeerLocation.z = newDeerLocation.z - zLength
+	end	
+	if kickDirection == "south" then		
+		newDeerLocation.x = newDeerLocation.x - xLength
+		newDeerLocation.z = newDeerLocation.z - zLength
+	end	
+	if kickDirection == "west" then		
+		newDeerLocation.x = newDeerLocation.x - xLength
+		newDeerLocation.z = newDeerLocation.z + zLength
+	end	
+	if newDeerLocation == nil then
+		return
 	end
-	return angle
+	Entity_SetPosition(ball, newDeerLocation)	
 end
 
 -- Called after initialization is done when game is fading up from black
