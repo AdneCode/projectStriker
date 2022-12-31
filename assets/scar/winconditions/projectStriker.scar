@@ -20,6 +20,7 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
+import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
 import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
@@ -74,10 +75,10 @@ function Mod_OnInit()
 	mapClear()
 	handleCivs()
 	teams = handleTeams()
-	Rule_AddGlobalEvent(handleTackle, GE_DamageReceived)
+	Rule_AddGlobalEvent(handleDamage, GE_DamageReceived)
 end
 
-function handleTackle(ctx)
+function handleDamage(ctx)
 	local attackingPlayer = ctx.attackerOwner
 	local attackerUnit = ctx.attacker
 	local tackledUnit = ctx.victim
@@ -92,6 +93,8 @@ function handleTackle(ctx)
 	if attackerTeam == nil then 
 		return 
 	end
+	
+	--Tackle
 	local attackerOffset = 3
 	local tackledOffset = 45
 	if Entity_IsOfType(attackerUnit, "cavalry") and Entity_IsOfType(tackledUnit, "monk") then
@@ -106,21 +109,7 @@ function handleTackle(ctx)
 		end
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
-		
-		local relicCarry = BP_GetAbilityBlueprint("monk_holding_relic")
-		local relicDrop = BP_GetAbilityBlueprint("monk_statetree_drop_relic")
-		--local test1 = Entity_IsDoingAbility(tackledUnit, relicCarry)
-		--local test2 = Entity_IsAbilityActive(tackledUnit, relicCarry)
-		--local test3 = Entity_HasAbility(tackledUnit, relicCarry)
-		--local test4 = Entity_IsHoldingAny(tackledUnit)
-		--local test6 = Squad_CanHold(tackledSquad)
-		--local test7 = Squad_IsAbilityActive_CS(tackledSquad, relicCarry)		
-		local sgroupMonk = SGroup_CreateIfNotFound("Monkas")
-		SGroup_Add(sgroupMonk, tackledSquad)
-		LocalCommand_SquadAbility(tackledPlayer, sgroupMonk, relicDrop, true, false)
-		local test5 = SGroup_IsDoingAbility(sgroupMonk, relicCarry, false)
-		SGroup_Clear(sgroupMonk)
-	
+		return
 	end
 	if Entity_IsOfType(attackerUnit, "spearman") and Entity_IsOfType(tackledUnit, "cavalry") then
 		if attackerTeam == "team1" then
@@ -133,10 +122,17 @@ function handleTackle(ctx)
 		end
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
+		return
 	end
-	--local attackingUnit = SGroup_FilterSpawned(attackerUnits, "sheep" )
 	
-	--SGroup_DeSpawn(tackledUnit)
+	--Kick
+	if Entity_IsOfType(tackledUnit, "gaia") then
+		local kickDirection = getKickDirection(attackerLocation, tackledLocation)
+		if Entity_IsOfType(attackerUnit, "spearman") then
+			
+		end
+		--SGroup_DeSpawn(tackledUnit)
+	end
 end
 
 
