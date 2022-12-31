@@ -1,0 +1,13 @@
+function handleTackle(ctx)
+if attackerTeam == "team1" then
+			attackerLocation.x = attackerLocation.x - attackerOffset
+			tackledLocation.x = tackledLocation.x + tackledOffset
+			
+		end
+		if attackerTeam == "team2" then
+			attackerLocation.x = attackerLocation.x + attackerOffset
+			tackledLocation.x = tackledLocation.x - tackledOffset
+		end
+		Entity_SetPosition(attackerUnit, attackerLocation)
+		Entity_SetPosition(tackledUnit, tackledLocation)	
+end

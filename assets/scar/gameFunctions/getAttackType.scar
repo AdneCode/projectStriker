@@ -1,0 +1,53 @@
+--Takes an attackerUnit and tackledUnit, returns the type of attack
+function getAttackType(attackerUnit, tackledUnit)
+	local attackerType = nil
+	local tackledType = nil
+	
+	if Entity_IsOfType(attackerUnit, "cavalry") then
+		attackerType = "cavalry"
+	end
+	if Entity_IsOfType(attackerUnit, "manatarms") then
+		attackerType = "manatarms"
+	end
+	if Entity_IsOfType(attackerUnit, "spearman") then
+		attackerType = "spearman"
+	end
+	
+	if Entity_IsOfType(tackledUnit, "cavalry") then
+		tackledType = "cavalry"
+	end
+	if Entity_IsOfType(tackledUnit, "manatarms") then
+		tackledType = "manatarms"
+	end
+	if Entity_IsOfType(tackledUnit, "spearman") then
+		tackledType = "spearman"
+	end
+	if Entity_IsOfType(tackledUnit, "scar_deer") then
+		tackledType = "ball"
+	end
+	
+	if attackerType == "spearman" and tackledType == "cavalry" then
+		return "spearToCav"
+	end
+	if attackerType == "cavalry" and tackledType == "manatarms" then
+		return "cavToMan"
+	end
+	if attackerType == "manatarms" and tackledType == "spearman" then
+		return "manToSpear"
+	end
+	if attackerType == tackledType then
+		return "mirror"
+	end
+	if attackerType == "spearman" and tackledType == "ball" then
+		return "spearToBall"
+	end
+	if attackerType == "cavalry" and tackledType == "ball" then
+		return "cavToBall"
+	end
+		if attackerType == "manatarms" and tackledType == "ball" then
+		return "manToBall"
+	end
+	
+	return nil	
+	
+end

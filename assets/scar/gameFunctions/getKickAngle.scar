@@ -1,0 +1,3 @@
+function getKickAngle(attackerLocation, tackledLocation, kickDirection)
+	
+end

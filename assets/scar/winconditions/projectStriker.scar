@@ -20,13 +20,15 @@ import("gameplay/event_cues.scar")
 import("gameplay/currentageui.scar")
 
 --Striker functions
-import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
+import("gameFunctions/getAttackType.scar") --Checks if someone is team 1 or 2
+--import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
 import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
 import("gameFunctions/handleAgeAndResources.scar") --sets resources to 0 and age to 4
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/mapClear.scar") --Clears map
+import("gameFunctions/spawnDeer.scar") --Spawns the ball
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
 
@@ -85,7 +87,7 @@ function handleDamage(ctx)
 	local tackledUnit = ctx.victim
 	local tackledPlayer = ctx.victimOwner
 	local tackledSquad = ctx.victimSquad
-	if attackingPlayer == nil or attackerUnit == nil or tackledUnit == nil or tackledPlayer == nil then
+	if attackingPlayer == nil or attackerUnit == nil or tackledUnit == nil then
 		return
 	end
 	local attackerLocation = Entity_GetPosition(attackerUnit)
@@ -98,7 +100,10 @@ function handleDamage(ctx)
 	--Tackle
 	local attackerOffset = 3
 	local tackledOffset = 45
-	if Entity_IsOfType(attackerUnit, "cavalry") and Entity_IsOfType(tackledUnit, "manatarms") then
+	local mirrorOffset = 25
+	local attackType = getAttackType(attackerUnit, tackledUnit)
+	if attackType == nil then return end
+	if attackType == "cavToMan" or attackType == "spearToCav" or attackType == "manToSpear" then
 		if attackerTeam == "team1" then
 			attackerLocation.x = attackerLocation.x - attackerOffset
 			tackledLocation.x = tackledLocation.x + tackledOffset
@@ -111,15 +116,15 @@ function handleDamage(ctx)
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
 		return
-	end
-	if Entity_IsOfType(attackerUnit, "spearman") and Entity_IsOfType(tackledUnit, "cavalry") then
+	end	
+	if attackType == "mirrorREMOVED" then
 		if attackerTeam == "team1" then
-			attackerLocation.x = attackerLocation.x - attackerOffset
-			tackledLocation.x = tackledLocation.x + tackledOffset			
+			attackerLocation.x = attackerLocation.x - mirrorOffset
+			tackledLocation.x = tackledLocation.x + mirrorOffset			
 		end
 		if attackerTeam == "team2" then
-			attackerLocation.x = attackerLocation.x + attackerOffset
-			tackledLocation.x = tackledLocation.x - tackledOffset
+			attackerLocation.x = attackerLocation.x + mirrorOffset
+			tackledLocation.x = tackledLocation.x - mirrorOffset
 		end
 		Entity_SetPosition(attackerUnit, attackerLocation)
 		Entity_SetPosition(tackledUnit, tackledLocation)
@@ -127,8 +132,9 @@ function handleDamage(ctx)
 	end
 	
 	--Kick
-	if Entity_IsOfType(tackledUnit, "gaia") then
+	if attackType == "cavToBall" or attackType == "spearToBall" or attackType == "manToBall" then
 		local kickDirection = getKickDirection(attackerLocation, tackledLocation)
+		local kickAngle = getKickAngle(attackerLocation, tackledLocation, kickDirection)
 		if Entity_IsOfType(attackerUnit, "spearman") then
 			
 		end
@@ -136,7 +142,43 @@ function handleDamage(ctx)
 	end
 end
 
+function getKickDirection(kickLocation, deerLocation)
+	local kickDirection = nil
+	if kickLocation.x <= deerLocation.x and kickLocation.z <= deerLocation.z then
+		kickDirection = "north"
+	end
+	if kickLocation.x <= deerLocation.x and kickLocation.z >= deerLocation.z then
+		kickDirection = "east"
+	end
+	if kickLocation.x >= deerLocation.x and kickLocation.z >= deerLocation.z then
+		kickDirection = "south"
+	end
+	if kickLocation.x >= deerLocation.x and kickLocation.z <= deerLocation.z then
+		kickDirection = "west"
+	end
+	return kickDirection
+end
 
+function getKickAngle(kickLocation, deerLocation, kickDirection)
+	local angle = nil
+	if kickDirection == "north" then
+		local xLength = math.abs(deerLocation.x - kickLocation.x)
+		local zLength = math.abs(deerLocation.z - kickLocation.z)
+		angle = math.atan(zLength/xLength)
+	end
+	if kickDirection == "east" then
+		local xLength = math.abs(deerLocation.x - kickLocation.x)
+		local zLength = math.abs(kickLocation.z - deerLocation.z)
+		angle = math.atan(zLength/xLength)
+	end
+	
+	if kickDirection == "west" then
+		local xLength = math.abs(kickLocation.x - deerLocation.x)
+		local zLength = math.abs(kickLocation.z - deerLocation.z)
+		angle = math.atan(zLength/xLength)
+	end
+	return angle
+end
 
 -- Called after initialization is done when game is fading up from black
 function Mod_Start()
@@ -148,18 +190,19 @@ function Mod_Start()
 	
 	for i, player in pairs(teams.team1) do
 		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
-		--spawnUnit("spear", World_Pos(33, 12, 45), player.id)
+		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
 		spawnUnit("maa", World_Pos(33, 12, 45), player.id)
-		spawnUnit("maa", World_Pos(33, 12, 45), player.id)
-		spawnUnit("maa", World_Pos(33, 12, 45), player.id)
+		spawnUnit("maa", World_Pos(33, 12, 60), player.id)
+		spawnUnit("maa", World_Pos(33, 12, 80), player.id)
 	end
 	for i, player in pairs(teams.team2) do
-		spawnUnit("knight", World_Pos(0, 12, 1), player.id)
-		--spawnUnit("spear", World_Pos(0, 12, 1), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 1), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 1), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 1), player.id)
+		spawnUnit("knight", World_Pos(0, 12, 45), player.id)
+		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
+		spawnUnit("maa", World_Pos(0, 12, 45), player.id)
+		spawnUnit("maa", World_Pos(0, 12, 60), player.id)
+		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
+	spawnDeer(World_Pos(0, 8, 0))
 end
 
 -- Called when Core_SetPlayerDefeated() is invoked. Signals that a player has been eliminated from play due to defeat.

@@ -1,0 +1,6 @@
+function spawnDeer(position)
+		local ebpDeer = BP_GetEntityBlueprint("gaia_huntable_deer")
+		local deer = Entity_Create(ebpDeer, teams.team1[1].id, position, false)
+		Entity_Spawn(deer)
+	                               
+end                                                                                                                                     
