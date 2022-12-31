@@ -108,7 +108,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>113</d3p1:Line>
+					<d3p1:Line>114</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -125,7 +125,7 @@
 					<d3p1:Column>9</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>112</d3p1:Line>
+					<d3p1:Line>113</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -143,6 +143,7 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleAgeAndResources.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getKickDirection.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\handleTackle.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\spawnUnit.scar</d3p1:string>
@@ -152,7 +153,6 @@
 			<d3p1:string>C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\cardinal\archives\Data.sga</d3p1:string>
 			<d3p1:string>C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\cardinal\archives\Art.sga</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\locdb\projectStriker.locdb</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\assets\scar\gameFunctions\getTeamFromPlayer.scar</d3p1:string>
 		</History>
 	</RecentFiles>
 </ProjectSettings>

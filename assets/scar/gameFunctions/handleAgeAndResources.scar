@@ -1,0 +1,7 @@
+function handleAgeAndResources(playerId)
+	Player_SetResource(playerId, RT_Food, 0)		
+	Player_SetResource(playerId, RT_Wood, 0)
+	Player_SetResource(playerId, RT_Gold, 0)
+	Player_SetResource(playerId, RT_Stone, 0)
+	Player_SetCurrentAge(playerId, 4)
+end

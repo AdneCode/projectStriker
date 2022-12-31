@@ -22,6 +22,7 @@ import("gameplay/currentageui.scar")
 --Striker functions
 import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
 import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
+import("gameFunctions/handleAgeAndResources.scar") --sets resources to 0 and age to 4
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
@@ -141,13 +142,7 @@ end
 function Mod_Start()
 	print("Mod_Start")
 	for i, player in pairs(PLAYERS) do
-		Player_SetResource(player.id, RT_Food, 0)		
-		Player_SetResource(player.id, RT_Wood, 0)
-		Player_SetResource(player.id, RT_Gold, 0)
-		Player_SetResource(player.id, RT_Stone, 0)
-		Player_SetCurrentAge(player.id, 4)
-		--FOW_RevealArea(World_Pos(0, 0, 45), 10200, 4)
-		
+		handleAgeAndResources(player.id)
 	end
 	FOW_RevealAll()
 	
