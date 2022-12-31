@@ -12,8 +12,8 @@ function spawnUnit(unit, position, playerId)
 end
 
 function getUnitSbp(unit)
-	if unit == "monk" then
-		return BP_GetSquadBlueprint("unit_monk_1_hre")
+	if unit == "maa" then
+		return BP_GetSquadBlueprint("unit_manatarms_3_hre")
 	end
 	if unit == "knight" then
 		return BP_GetSquadBlueprint("unit_knight_3_hre")
