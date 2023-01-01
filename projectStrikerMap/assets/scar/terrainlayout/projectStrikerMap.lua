@@ -2,6 +2,7 @@
 
 n = tt_none 
 g = tt_plains
+h = tt_plateau_low
 w = tt_ocean
 s = tt_player_start_nomad_plains
 gridHeight, gridWidth, gridSize = SetCustomCoarseGrid(20)
@@ -27,7 +28,7 @@ end
 
 for xPos = xEdgeTop, xEdgeBottom do
 	for yPos = zEdgeBottom, zEdgeTop do
-		terrainLayoutResult[xPos][yPos].terrainType = g
+		terrainLayoutResult[xPos][yPos].terrainType = h
 	end
 end
 

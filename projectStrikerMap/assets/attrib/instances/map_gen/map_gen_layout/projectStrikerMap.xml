@@ -198,8 +198,8 @@
 			<float name="droplets_per_cell" value="0.85" />
 			<float name="erosion_rate" value="0.5" />
 			<float name="deposit_rate" value="0.06" />
-			<float name="friction" value="0.15" />
-			<float name="velocity_erosion_strength" value="3" />
+			<float name="friction" value="0.05" />
+			<float name="velocity_erosion_strength" value="6" />
 			<float name="max_erosion_depth" value="1.2" />
 			<float name="iteration_strength_increase" value="0.04" />
 			<float name="sample_offset_radius" value="0" />
