@@ -52,7 +52,14 @@ Core_RegisterModule(_mod.module)
 -----------------------------------------------------------------------
 -- Constants  
 -----------------------------------------------------------------------
+positions = {}
+positions.center = World_Pos(0, 8, 0)
 
+lines = {}
+lines.zLineTop = 0-200
+lines.zLineBottom = 0+200
+lines.xLineTop = 0+400
+lines.xLineBottom = 0-400
 -----------------------------------------------------------------------
 -- Scripting framework 
 -----------------------------------------------------------------------
@@ -80,6 +87,16 @@ function Mod_OnInit()
 	handleCivs()
 	teams = handleTeams()
 	Rule_AddGlobalEvent(handleDamage, GE_DamageReceived)
+	
+end
+
+function checkOutside()	
+	for i, player in pairs(PLAYERS) do
+		local entities = Player_GetAllEntities(player.id)
+		local entityTable = {}
+		print("test")
+	end
+	
 end
 
 function handleDamage(ctx)
@@ -209,7 +226,8 @@ function Mod_Start()
 		spawnUnit("maa", World_Pos(0, 12, 60), player.id)
 		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
-	spawnDeer(World_Pos(0, 8, 0))
+	spawnDeer(positions.center)
+	Rule_AddInterval(checkOutside, 1)
 end
 
 -- Called when Core_SetPlayerDefeated() is invoked. Signals that a player has been eliminated from play due to defeat.

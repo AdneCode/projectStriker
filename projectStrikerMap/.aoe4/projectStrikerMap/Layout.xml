@@ -9,9 +9,9 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="01/01/2023 00:40:28" />
-        <LayoutDocument Title="projectStrikerMap.lua" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 02:29:39" />
+        <LayoutDocument Title="projectStrikerMap.lua" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 02:50:51" />
         <LayoutDocument Title="ebps" ContentId="Category|ebps" LastActivationTimeStamp="01/01/2023 01:08:51" />
-        <LayoutDocument Title="map_gen\map_gen_layout" ContentId="Category|map_gen\map_gen_layout" LastActivationTimeStamp="01/01/2023 02:10:48" />
+        <LayoutDocument Title="map_gen\map_gen_layout" ContentId="Category|map_gen\map_gen_layout" LastActivationTimeStamp="01/01/2023 02:50:02" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="01/01/2023 02:03:05" />

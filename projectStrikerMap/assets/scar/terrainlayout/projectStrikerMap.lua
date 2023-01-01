@@ -6,15 +6,15 @@ h = tt_plateau_low
 w = tt_ocean
 s = tt_player_start_nomad_plains
 t = tt_valley
---gridHeight, gridWidth, gridSize = SetCustomCoarseGrid(20)
---terrainLayoutResult = SetUpGrid(gridSize, n, terrainLayoutResult)
+gridHeight, gridWidth, gridSize = SetCustomCoarseGrid(20)
+terrainLayoutResult = SetUpGrid(gridSize, n, terrainLayoutResult)
 middle =  math.ceil(gridSize/2)	
 
 arenaWidth = 3
 arenaLength = 10
 xSpawn = 4
 tryLineOffset = 8
-waterOffset = 2
+waterOffset = 8
 
 xEdgeTop = middle-arenaWidth
 xEdgeBottom = middle+arenaWidth
@@ -26,13 +26,13 @@ tryLineTeam2 = middle+tryLineOffset
 for i = 0, 7 do	
 	if i < 4 then
 		local spawn = 15 + 3*i
-		terrainLayoutResult[middle-2][spawn].terrainType = s
-		terrainLayoutResult[middle-2][spawn].playerIndex = i 
+		terrainLayoutResult[middle-1][spawn].terrainType = s
+		terrainLayoutResult[middle-1][spawn].playerIndex = i 
 	end
 	if i > 3 then
 		local spawn = 12 + 3*(i-3)
-		terrainLayoutResult[middle+2][spawn].terrainType = s
-		terrainLayoutResult[middle+2][spawn].playerIndex = i 
+		terrainLayoutResult[middle+1][spawn].terrainType = s
+		terrainLayoutResult[middle+1][spawn].playerIndex = i 
 	end
 end
 
