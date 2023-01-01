@@ -53,7 +53,7 @@ Core_RegisterModule(_mod.module)
 -- Constants  
 -----------------------------------------------------------------------
 positions = {}
-positions.center = World_Pos(0, 8, 0)
+positions.center = World_Pos(0, 18.5, 0)
 
 lines = {}
 lines.zLineTop = 0-200
@@ -232,7 +232,7 @@ function Mod_Start()
 		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
 	spawnDeer(positions.center)
-	Rule_AddInterval(checkOutside, 1)
+	Rule_AddInterval(handleOnTick, 1)
 end
 
 -- Called when Core_SetPlayerDefeated() is invoked. Signals that a player has been eliminated from play due to defeat.
