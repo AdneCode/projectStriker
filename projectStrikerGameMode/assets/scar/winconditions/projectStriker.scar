@@ -90,12 +90,17 @@ function Mod_OnInit()
 	
 end
 
-function checkOutside()	
+function handleOnTick()	
 	for i, player in pairs(PLAYERS) do
-		local entities = Player_GetAllEntities(player.id)
-		local entityTable = {}
-		print("test")
+		local allEntities = Player_GetAllEntities(player.id)
+		--local cav = EGroup_Filter(allEntities, "cavalry", FILTER_KEEP)
+		EGroup_ForEach(allEntities, checkOutside)
 	end
+	
+end
+
+function checkOutside(groupid, itemindex, itemid)	
+	print("test")
 	
 end
 
