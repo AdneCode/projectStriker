@@ -192,7 +192,7 @@
 			</group>
 		</enum_table>
 		<group name="oceans">
-			<float name="ocean_height" value="7" />
+			<float name="ocean_height" value="5" />
 		</group>
 		<group name="erosion">
 			<float name="droplets_per_cell" value="0.85" />
@@ -202,7 +202,7 @@
 			<float name="velocity_erosion_strength" value="3" />
 			<float name="max_erosion_depth" value="1.2" />
 			<float name="iteration_strength_increase" value="0.04" />
-			<float name="sample_offset_radius" value="0.75" />
+			<float name="sample_offset_radius" value="0" />
 			<int name="max_droplet_iterations" value="100" />
 			<int name="erosion_magnification" value="2" />
 			<float name="end_droplets_below_velocity" value="0.75" />
