@@ -192,7 +192,7 @@
 			</group>
 		</enum_table>
 		<group name="oceans">
-			<float name="ocean_height" value="5" />
+			<float name="ocean_height" value="3" />
 		</group>
 		<group name="erosion">
 			<float name="droplets_per_cell" value="0.85" />
@@ -211,6 +211,506 @@
 		<list name="default_biome_tuning_overrides">
 		</list>
 		<list name="default_map_size_tuning_overrides">
+			<group name="map_size_overrides" List.ItemID="-1867090254">
+				<template_reference name="map_size_resource_balancing" value="map_gen\map_gen_layout_and_size_params">
+					<instance_reference name="distribution_balancing_list" value="map_gen\distribution\distribution_balancing_list\default_resources_list" />
+					<enum_table name="distribution_balancing">
+						<group name="deer_large">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1618367586">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="boar_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1275745047">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="fish_deepwater_offshore">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-1935602826">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="forests_stealth">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="960846283">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="forests_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-411302472">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="forests_large">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-1962332376">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="fish_river">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="298395903">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="fish_shore">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-217276246">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="settlements_naval">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="650631972">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="fish_deepwater">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-451324271">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="boar_large">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-336386775">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="gold">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-2094372250">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="stone">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1156115121">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="relics">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1743196046">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="berries">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1924076563">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="settlements">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-1078896024">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="forests_stealth_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-581993742">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="holy_sites">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-723387237">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="berries_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-2049198309">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="stone_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="1701990010">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="gold_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-532290343">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="sheep_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="715989604">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="sheep_med">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="187714389">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="sheep_large">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="131548071">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="deer_small">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="332740485">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+						<group name="deer_verylarge">
+							<list name="accessible_spawns">
+								<group name="accessible_spawn" List.ItemID="-118660782">
+									<int name="accessible_minimum_spawns_per_player" value="0" />
+									<float name="accessible_range_min" value="0" />
+									<float name="accessible_range_max" value="0" />
+								</group>
+							</list>
+							<int name="contested_base_spawn_count" value="0" />
+							<float name="contested_additional_spawns_per_player" value="0" />
+							<float name="avoid_same_spawn_distance" value="0" />
+							<float name="avoid_any_spawn_distance" value="0" />
+							<float name="contested_range_min" value="0" />
+							<float name="contested_range_max" value="0" />
+							<bool name="contested_excludes_starting_land_mass" value="False" />
+							<bool name="is_team_resource" value="False" />
+							<int name="spawn_priority" value="0" />
+						</group>
+					</enum_table>
+					<float name="contested_range_player" value="150" />
+					<float name="player_start_influence_distance" value="90" />
+					<float name="player_resource_access_distance" value="640" />
+					<float name="solo_play_contested_area_start" value="0.5" />
+					<float name="solo_play_contested_area_end" value="0" />
+					<float name="contested_range_neutral" value="100" />
+				</template_reference>
+				<instance_reference name="map_size" value="map_gen\map_gen_size\map_size_768" />
+				<template_reference name="map_size_terrain_smoothing" value="map_gen\map_gen_terrain_smoothing_params">
+					<template_reference name="fractal_shift_amplitude" value="map_gen\layout\coarse_map_blur_param">
+						<float name="standard_deviation" value="0" />
+						<float name="normalization_exponent_for_gaussian_kernel" value="1" />
+					</template_reference>
+					<template_reference name="fractal_shift_variance" value="map_gen\layout\coarse_map_blur_param">
+						<float name="standard_deviation" value="0" />
+						<float name="normalization_exponent_for_gaussian_kernel" value="1" />
+					</template_reference>
+					<template_reference name="fractal_shift_direction_bias" value="map_gen\layout\coarse_map_blur_param">
+						<float name="standard_deviation" value="0" />
+						<float name="normalization_exponent_for_gaussian_kernel" value="1" />
+					</template_reference>
+					<template_reference name="height_over_width" value="map_gen\layout\coarse_map_blur_param">
+						<float name="standard_deviation" value="3" />
+						<float name="normalization_exponent_for_gaussian_kernel" value="0" />
+					</template_reference>
+				</template_reference>
+			</group>
 		</list>
 		<instance_reference name="access_control_inventory_item" value="" />
 	</group>
