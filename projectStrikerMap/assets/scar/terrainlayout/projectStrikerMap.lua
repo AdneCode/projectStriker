@@ -15,9 +15,9 @@ zEdgeBottom = middle-12
 xSpawn = 4
 
 for i = 0, 7 do
-	spawn = 6 + 3*i
-	terrainLayoutResult[xSpawn][spawn].terrainType = s
-	terrainLayoutResult[xSpawn][spawn].playerIndex = i 
+	spawn = 9 + 3*i
+	terrainLayoutResult[middle][spawn].terrainType = s
+	terrainLayoutResult[middle][spawn].playerIndex = i 
 end
 
 for xPos = 1, gridSize do
@@ -28,7 +28,7 @@ end
 
 for xPos = xEdgeTop, xEdgeBottom do
 	for yPos = zEdgeBottom, zEdgeTop do
-		terrainLayoutResult[xPos][yPos].terrainType = h
+		terrainLayoutResult[xPos][yPos].terrainType = g
 	end
 end
 

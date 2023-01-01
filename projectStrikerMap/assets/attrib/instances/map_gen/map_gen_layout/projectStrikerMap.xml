@@ -192,7 +192,7 @@
 			</group>
 		</enum_table>
 		<group name="oceans">
-			<float name="ocean_height" value="3" />
+			<float name="ocean_height" value="2.5" />
 		</group>
 		<group name="erosion">
 			<float name="droplets_per_cell" value="0.85" />
@@ -706,7 +706,7 @@
 						<float name="normalization_exponent_for_gaussian_kernel" value="1" />
 					</template_reference>
 					<template_reference name="height_over_width" value="map_gen\layout\coarse_map_blur_param">
-						<float name="standard_deviation" value="3" />
+						<float name="standard_deviation" value="0.05" />
 						<float name="normalization_exponent_for_gaussian_kernel" value="0" />
 					</template_reference>
 				</template_reference>

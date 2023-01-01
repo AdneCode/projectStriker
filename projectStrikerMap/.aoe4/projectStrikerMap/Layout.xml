@@ -9,12 +9,12 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="01/01/2023 00:40:28" />
-        <LayoutDocument Title="projectStrikerMap.lua" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 01:21:47" />
+        <LayoutDocument Title="projectStrikerMap.lua" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 02:08:20" />
         <LayoutDocument Title="ebps" ContentId="Category|ebps" LastActivationTimeStamp="01/01/2023 01:08:51" />
-        <LayoutDocument Title="map_gen\map_gen_layout" ContentId="Category|map_gen\map_gen_layout" LastActivationTimeStamp="01/01/2023 01:16:52" />
+        <LayoutDocument Title="map_gen\map_gen_layout" IsSelected="True" IsLastFocusedDocument="True" ContentId="Category|map_gen\map_gen_layout" LastActivationTimeStamp="01/01/2023 02:10:48" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" IsSelected="True" ContentId="Output" LastActivationTimeStamp="01/01/2023 00:44:17" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" IsSelected="True" ContentId="Output" LastActivationTimeStamp="01/01/2023 02:03:05" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" ContentId="ErrorList" LastActivationTimeStamp="07/28/2020 09:55:14" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="07/28/2020 09:55:15" />
       </LayoutAnchorablePane>
