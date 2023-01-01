@@ -1,0 +1,22 @@
+--Spawns all game lines
+function spawnLines()
+	local ebpRelic = BP_GetEntityBlueprint("relic")
+	--GridSize
+	local zLength = math.abs(lines.xLineTop-lines.xLineBottom) / 20
+	--Draw north and south line
+	for i = 0, 20 do
+		local position = {}			
+		position.x = xLineBottom + (zLength * i)
+		position.y = positions.arenaHeight
+		position.z = lines.zLineTop
+		
+		local relicTop = Entity_Create(ebpRelic, teams.team1[1].id, position, false)
+		Entity_Spawn(relicTop)
+		
+		position.z = lines.zLineBottom
+		local relicBottom = Entity_Create(ebpRelic, teams.team1[1].id, position, false)
+		Entity_Spawn(relicBottom)
+	end
+	
+	
+end

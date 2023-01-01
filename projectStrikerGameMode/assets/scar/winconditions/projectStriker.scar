@@ -30,6 +30,7 @@ import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/mapClear.scar") --Clears map
 import("gameFunctions/spawnDeer.scar") --Spawns the deer
+import("gameFunctions/spawnLines.scar") --Spawns all game lines
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
 
@@ -53,7 +54,9 @@ Core_RegisterModule(_mod.module)
 -- Constants  
 -----------------------------------------------------------------------
 positions = {}
-positions.center = World_Pos(0, 18.5, 0)
+positions.arenaHeight = 18.5
+positions.center = World_Pos(0, positions.arenaHeight, 0)
+
 
 lines = {}
 lines.zLineTop = 0-200
@@ -99,10 +102,16 @@ function handleOnTick()
 	
 end
 
-function checkOutside(groupid, itemindex, itemid)	
+function checkUnitOutside(groupid, itemindex, unit)	
 	print("test")
-	
+	local entityPosition = Entity_GetPosition(unit)
+	return false
 end
+
+function checkBoarOutside()	
+	print("test")
+end
+
 
 function handleDamage(ctx)
 	local attackingPlayer = ctx.attackerOwner
@@ -231,6 +240,7 @@ function Mod_Start()
 		spawnUnit("maa", World_Pos(0, 12, 60), player.id)
 		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
+	spawnLines()
 	spawnDeer(positions.center)
 	Rule_AddInterval(handleOnTick, 1)
 end
