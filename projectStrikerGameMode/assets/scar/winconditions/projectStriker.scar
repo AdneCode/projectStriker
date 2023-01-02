@@ -59,7 +59,7 @@ gameState = {}
 gameState.phase = "WarmUp"
 
 positions = {}
-positions.arenaHeight = 5
+positions.arenaHeight = World_GetHeightAt(0,0)
 positions.center = World_Pos(0, positions.arenaHeight+1, 0)
 
 
@@ -114,7 +114,7 @@ function handleOnTick()
 end
 
 function handleBall()
-	if ball == nil or gamestate.phase ~= "inGame" then
+	if ball == nil or gameState.phase ~= "inGame" then
 		return
 	end
 	local ballPosition = Entity_GetPosition(ball)
