@@ -1,22 +1,93 @@
 --Spawns all game lines
 function spawnLines()
+	--Blueprints
 	local ebpRelic = BP_GetEntityBlueprint("relic")
-	--GridSize
-	local zLength = math.abs(lines.xLineTop-lines.xLineBottom) / 20
+	local ebpTree = BP_GetEntityBlueprint("birch_tall_wild_scatter")
+	--Grid related
+	local xGridCount = 14
+	local xLength = math.abs(lines.xLineTop-lines.xLineBottom) / xGridCount
+	local zGridCount = 7
+	local zLength = math.abs(lines.zLineTop-lines.zLineBottom) / zGridCount
+	local xGoalGridCount = 8
+	local xGoalLength = math.abs(lines.xGoalTop-lines.xLineTop) / xGoalGridCount
+	local zGoalGridCount = 12
+	local zGoalLength = math.abs(lines.zGoalTop-lines.zGoalBottom) / zGoalGridCount
 	--Draw north and south line
-	for i = 0, 20 do
-		local position = {}			
-		position.x = xLineBottom + (zLength * i)
-		position.y = positions.arenaHeight
+	for i = 0, xGridCount do
+		local position = {}	
+		position.x = lines.xLineBottom + (xLength * i)
+		position.y = positions.arenaHeight-1
 		position.z = lines.zLineTop
+		local spawnPosition = World_Pos(position.x, position.y, position.z)		
 		
-		local relicTop = Entity_Create(ebpRelic, teams.team1[1].id, position, false)
-		Entity_Spawn(relicTop)
-		
+		local relicTop = Entity_Create(ebpRelic, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(relicTop)		
 		position.z = lines.zLineBottom
-		local relicBottom = Entity_Create(ebpRelic, teams.team1[1].id, position, false)
+		spawnPosition = World_Pos(position.x, position.y, position.z)
+		local relicBottom = Entity_Create(ebpRelic, teams.team1[1].id, spawnPosition, false)
 		Entity_Spawn(relicBottom)
 	end
 	
+	--TryLines
+	for i = 0, zGridCount do
+		if i ~= 3 and i ~=4 then
+			local position = {}	
+			position.x = lines.xLineTop
+			position.y = positions.arenaHeight-1
+			position.z = lines.zLineBottom  + (zLength * i)
+			local spawnPosition = World_Pos(position.x, position.y, position.z)		
+			
+			local relicTop = Entity_Create(ebpRelic, teams.team1[1].id, spawnPosition, false)
+			Entity_Spawn(relicTop)		
+			position.x = lines.xLineBottom
+			spawnPosition = World_Pos(position.x, position.y, position.z)
+			local relicBottom = Entity_Create(ebpRelic, teams.team1[1].id, spawnPosition, false)
+			Entity_Spawn(relicBottom)
+		end
+	end	
+
+	--Goals
+	for i = 0, zGoalGridCount do
+		local position = {}	
+		position.x = lines.xGoalTop
+		position.y = positions.arenaHeight-1
+		position.z = lines.zGoalBottom  + (zGoalLength * i)
+		local spawnPosition = World_Pos(position.x, position.y, position.z)	
+		
+		local treeTop = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeTop)		
+		position.x = lines.xGoalBottom
+		spawnPosition = World_Pos(position.x, position.y, position.z)
+		local treeBottom = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeBottom)
+	end			
 	
+	for i = 0, xGoalGridCount do
+		local position = {}	
+		position.x = lines.xGoalBottom  + (xGoalLength * i)
+		position.y = positions.arenaHeight-1
+		position.z = lines.zGoalTop
+		local spawnPosition = World_Pos(position.x, position.y, position.z)	
+		
+		local treeTop = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeTop)		
+		position.z = lines.zGoalBottom
+		spawnPosition = World_Pos(position.x, position.y, position.z)
+		local treeBottom = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeBottom)
+	end	
+	for i = 0, xGoalGridCount do
+		local position = {}	
+		position.x = lines.xGoalTop  - (xGoalLength * i)
+		position.y = positions.arenaHeight-1
+		position.z = lines.zGoalTop
+		local spawnPosition = World_Pos(position.x, position.y, position.z)	
+		
+		local treeTop = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeTop)		
+		position.z = lines.zGoalBottom
+		spawnPosition = World_Pos(position.x, position.y, position.z)
+		local treeBottom = Entity_Create(ebpTree, teams.team1[1].id, spawnPosition, false)
+		Entity_Spawn(treeBottom)
+	end	
 end
