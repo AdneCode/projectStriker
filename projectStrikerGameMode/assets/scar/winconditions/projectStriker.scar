@@ -66,12 +66,12 @@ positions.center = World_Pos(0, positions.arenaHeight+1, 0)
 
 lines = {}
 lines.middle = 0
-lines.zLineTop = lines.middle+65
-lines.zLineBottom = lines.middle-65
-lines.xLineTop = lines.middle+140
-lines.xLineBottom = lines.middle-140
-lines.zGoalTop = lines.zLineTop-50
-lines.zGoalBottom = lines.zLineBottom+50
+lines.zLineTop = lines.middle+55
+lines.zLineBottom = lines.middle-55
+lines.xLineTop = lines.middle+120
+lines.xLineBottom = lines.middle-120
+lines.zGoalTop = lines.zLineTop-40
+lines.zGoalBottom = lines.zLineBottom+40
 lines.xGoalTop = lines.xLineTop + 30
 lines.xGoalBottom = lines.xLineBottom - 30
 -----------------------------------------------------------------------
@@ -118,8 +118,7 @@ function handleBall()
 		return
 	end
 	local ballPosition = Entity_GetPosition(ball)
-	local yBall = World_GetHeightAt(ballPosition.x, ballPosition.z)
-	ballPosition.y = yBall
+	ballPosition.y = World_GetHeightAt(ballPosition.x, ballPosition.z)
 	Entity_SetPosition(ball, ballPosition)	
 	if ballPosition.x > lines.xGoalBottom and 
 		ballPosition.x < lines.xLineBottom and
@@ -160,24 +159,28 @@ function handleUnitOutside(groupid, itemindex, unit)
 	if entityPosition.x >= lines.xLineTop then
 		local difference = (math.abs(entityPosition.x - lines.xLineTop))
 		entityPosition.x = lines.xLineTop - (difference * differenceMultiplier) - flatPush
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
 		Entity_SetPosition(unit, entityPosition)
 		handleUnitHeight(unit)
 	end
 	if entityPosition.x <= lines.xLineBottom then
 		local difference = (math.abs(entityPosition.x - lines.xLineBottom))
 		entityPosition.x = lines.xLineBottom + (difference * differenceMultiplier) + flatPush
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
 		Entity_SetPosition(unit, entityPosition)
 		handleUnitHeight(unit)
 	end
 	if entityPosition.z >= lines.zLineTop then
 		local difference = (math.abs(entityPosition.z - lines.zLineTop))
 		entityPosition.z = lines.zLineTop - (difference * differenceMultiplier) - flatPush
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
 		Entity_SetPosition(unit, entityPosition)
 		handleUnitHeight(unit)
 	end
 	if entityPosition.z <= lines.zLineBottom then
 		local difference = (math.abs(entityPosition.z - lines.zLineBottom))
 		entityPosition.z = lines.zLineBottom + (difference * differenceMultiplier) + flatPush
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
 		Entity_SetPosition(unit, entityPosition)
 		handleUnitHeight(unit)		
 	end
@@ -203,7 +206,7 @@ function handleDamage(ctx)
 	
 	--Tackle
 	local attackerOffset = 3 + World_GetRand(1, 2)
-	local tackledOffset = 35 + World_GetRand(1, 10)
+	local tackledOffset = 35 + World_GetRand(1, 5)
 	local mirrorOffset = 25
 	local attackType = getAttackType(attackerUnit, tackledUnit)
 	if attackType == nil then return end
@@ -257,7 +260,7 @@ function setNewDeerPosition(kickLocation, deerLocation, ball, kickDirection, kic
 		ballOffset = 30 + ballOffset
 	end
 	if attackType == "spearToBall" then
-		ballOffset = 35 + ballOffset +  World_GetRand(1, 10)
+		ballOffset = 35 + ballOffset +  World_GetRand(1, 4)
 	end	
 	
 	local xLength = math.sin(kickAngle) * ballOffset

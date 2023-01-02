@@ -10,7 +10,7 @@ function spawnLines()
 	local zLength = math.abs(lines.zLineTop-lines.zLineBottom) / zGridCount
 	local xGoalGridCount = 8
 	local xGoalLength = math.abs(lines.xGoalTop-lines.xLineTop) / xGoalGridCount
-	local zGoalGridCount = 12
+	local zGoalGridCount = 10
 	local zGoalLength = math.abs(lines.zGoalTop-lines.zGoalBottom) / zGoalGridCount
 	--Draw north and south line
 	for i = 0, xGridCount do
