@@ -1,0 +1,28 @@
+<DataWarehouse>
+	<!--projectStrikerTP/-->
+	<DataObject Name="projectStrikerTP" Type="Mod" Id="4104905793258242435" Version="1">
+		<DataProperty Name="m_description" Type="Object">
+			<DataValue Name="util::ReflectLocString">17662910926329552527</DataValue>
+			<!--projectStrikerTP/util::ReflectLocString/-->
+			<DataObject Name="" Type="util::ReflectLocString" Id="17662910926329552527" OwnerId="4104905793258242435">
+				<DataProperty Name="m_modPart2" Type="UInt32" Value="2680894118"/>
+				<DataProperty Name="m_modPart3" Type="UInt32" Value="2148897654"/>
+				<DataProperty Name="m_modPart0" Type="UInt32" Value="3489557731"/>
+				<DataProperty Name="m_modPart1" Type="UInt32" Value="1178480444"/>
+				<DataProperty Name="m_locStringKey" Type="Int32" Value="2"/>
+			</DataObject>
+		</DataProperty>
+		<DataProperty Name="m_name" Type="Object">
+			<DataValue Name="util::ReflectLocString">8530338082900158232</DataValue>
+			<!--projectStrikerTP/util::ReflectLocString/-->
+			<DataObject Name="" Type="util::ReflectLocString" Id="8530338082900158232" OwnerId="4104905793258242435">
+				<DataProperty Name="m_modPart2" Type="UInt32" Value="2680894118"/>
+				<DataProperty Name="m_modPart3" Type="UInt32" Value="2148897654"/>
+				<DataProperty Name="m_modPart0" Type="UInt32" Value="3489557731"/>
+				<DataProperty Name="m_modPart1" Type="UInt32" Value="1178480444"/>
+				<DataProperty Name="m_locStringKey" Type="Int32" Value="1"/>
+			</DataObject>
+		</DataProperty>
+	</DataObject>
+</DataWarehouse>
+
