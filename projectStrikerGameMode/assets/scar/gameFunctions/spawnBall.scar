@@ -1,5 +1,6 @@
 function spawnBall(position)
 		local ebpBall = BP_GetEntityBlueprint("gaia_huntable_deer")
 		ball = Entity_Create(ebpBall, teams.team1[1].id, position, false)
-		Entity_Spawn(ball)	                               
+		Entity_Spawn(ball)	  
+	 	gameState.phase = "inGame"
 end                                                                                                                                     

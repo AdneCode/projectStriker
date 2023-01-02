@@ -121,17 +121,17 @@ function handleBall()
 	local yBall = World_GetHeightAt(ballPosition.x, ballPosition.z)
 	ballPosition.y = yBall
 	Entity_SetPosition(ball, ballPosition)	
-	if ball.x > lines.xGoalBottom and 
-		ball.x < lines.xLineBottom and
-		ball.z < lines.zGoalTop and
-		ball.z > lines.zGoalBottom then
+	if ballPosition.x > lines.xGoalBottom and 
+		ballPosition.x < lines.xLineBottom and
+		ballPosition.z < lines.zGoalTop and
+		ballPosition.z > lines.zGoalBottom then
 		handleGoal("team1")
 		return
 	end
-	if ball.x < lines.xGoalTop and 
-		ball.x > lines.xLineTop and
-		ball.z < lines.zGoalTop and
-		ball.z > lines.zGoalBottom then
+	if ballPosition.x < lines.xGoalTop and 
+		ballPosition.x > lines.xLineTop and
+		ballPosition.z < lines.zGoalTop and
+		ballPosition.z > lines.zGoalBottom then
 		handleGoal("team2")
 		return
 	end
@@ -155,7 +155,7 @@ function handleUnitOutside(groupid, itemindex, unit)
 	if entityType == "gaia" and groupid ~= nil then 
 		return
 	end
-	local flatPush = 2
+	local flatPush = World_GetRand(2, 5)
 	local differenceMultiplier = 0.35
 	if entityPosition.x >= lines.xLineTop then
 		local difference = (math.abs(entityPosition.x - lines.xLineTop))
@@ -185,11 +185,6 @@ function handleUnitOutside(groupid, itemindex, unit)
 	return false
 end
 
-function checkBoarOutside()	
-	print("test")
-end
-
-
 function handleDamage(ctx)
 	local attackingPlayer = ctx.attackerOwner
 	local attackerUnit = ctx.attacker
@@ -207,8 +202,8 @@ function handleDamage(ctx)
 	end
 	
 	--Tackle
-	local attackerOffset = 3
-	local tackledOffset = 45
+	local attackerOffset = 3 + World_GetRand(1, 2)
+	local tackledOffset = 35 + World_GetRand(1, 10)
 	local mirrorOffset = 25
 	local attackType = getAttackType(attackerUnit, tackledUnit)
 	if attackType == nil then return end
@@ -252,20 +247,21 @@ end
 
 function setNewDeerPosition(kickLocation, deerLocation, ball, kickDirection, kickAngle, attackType)
 	--Distance ball and kicker are travelling
-	local ballOffSet = nil
-	local kickerOffSet = 3
+	local ballOffset = nil
+	local ballOffset = 3
+	local ballOffset =  World_GetRand(1, 5)
 	if attackType == "cavToBall" then
-		ballOffSet = 10
+		ballOffset = 10 + ballOffset
 	end
 	if attackType == "manToBall" then
-		ballOffSet = 20
+		ballOffset = 30 + ballOffset
 	end
 	if attackType == "spearToBall" then
-		ballOffSet = 25
+		ballOffset = 35 + ballOffset +  World_GetRand(1, 10)
 	end	
 	
-	local xLength = math.sin(kickAngle) * ballOffSet
-	local zLength = math.cos(kickAngle) * ballOffSet
+	local xLength = math.sin(kickAngle) * ballOffset
+	local zLength = math.cos(kickAngle) * ballOffset
 	local newDeerLocation = deerLocation
 	if kickDirection == "north" then		
 		newDeerLocation.x = newDeerLocation.x + xLength
@@ -302,15 +298,11 @@ function Mod_Start()
 		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
 		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
 		spawnUnit("maa", World_Pos(33, 12, 45), player.id)
-		spawnUnit("maa", World_Pos(33, 12, 60), player.id)
-		spawnUnit("maa", World_Pos(33, 12, 80), player.id)
 	end
 	for i, player in pairs(teams.team2) do
 		spawnUnit("knight", World_Pos(0, 12, 45), player.id)
 		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
 		spawnUnit("maa", World_Pos(0, 12, 45), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 60), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
 	spawnLines()
 	spawnBall(positions.center)
