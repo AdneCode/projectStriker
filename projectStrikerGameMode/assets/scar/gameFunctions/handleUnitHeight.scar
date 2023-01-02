@@ -1,0 +1,9 @@
+--Fixes y position for moved units
+function handleUnitHeight(unit)
+	local definePosition = Entity_GetPosition(unit)
+	local yWorld = World_GetHeightAt(definePosition.x, definePosition.z)
+	if definePosition.y ~= yWorld then
+		definePosition.y = yWorld + 1
+		Entity_SetPosition(unit, definePosition)
+	end
+end
