@@ -1,3 +1,6 @@
-function getKickAngle(attackerLocation, tackledLocation, kickDirection)
-	
+function getKickAngle(kickLocation, deerLocation, kickDirection)
+	local xLength = math.abs(deerLocation.x - kickLocation.x)
+	local zLength = math.abs(deerLocation.z - kickLocation.z)
+	local angle = math.atan(xLength/zLength)
+	return angle
 end

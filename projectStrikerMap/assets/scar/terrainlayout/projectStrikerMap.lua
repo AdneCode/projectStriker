@@ -11,10 +11,10 @@ terrainLayoutResult = SetUpGrid(gridSize, n, terrainLayoutResult)
 middle =  math.ceil(gridSize/2)	
 
 arenaWidth = 3
-arenaLength = 10
+arenaLength = 7
 xSpawn = 4
 tryLineOffset = 8
-waterOffset = 8
+waterOffset = 4
 
 xEdgeTop = middle-arenaWidth
 xEdgeBottom = middle+arenaWidth
@@ -43,6 +43,8 @@ for xPos = 1, gridSize do
 	end
 end
 
+
+
 --Sets ground for arena
 for xPos = xEdgeTop, xEdgeBottom do
 	for yPos = zEdgeBottom, zEdgeTop do
@@ -51,9 +53,9 @@ for xPos = xEdgeTop, xEdgeBottom do
 end
 
 --Sets tryline for score area
-for xPos = xEdgeTop, xEdgeBottom do
-	terrainLayoutResult[xPos][tryLineTeam1].terrainType = t
-	terrainLayoutResult[xPos][tryLineTeam2].terrainType = t
+for xPos = middle-1, middle+1 do	
+	terrainLayoutResult[xPos][tryLineTeam1].terrainType = g
+	terrainLayoutResult[xPos][tryLineTeam2].terrainType = g
 end
 
 --Fills area around water
@@ -69,6 +71,17 @@ for xPos = 1, gridSize do
 		end
 	end
 end
+	
+--Creates waterway
+for xPos = 1, gridSize do 
+	for yPos = middle-(waterOffset/2), middle+(waterOffset/2) do
+		if xPos < xEdgeTop or
+			xPos > xEdgeBottom then
+			terrainLayoutResult[xPos][yPos].terrainType = w
+		end
+	end
+end
+
 
 
 

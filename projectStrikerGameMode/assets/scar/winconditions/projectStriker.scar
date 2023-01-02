@@ -21,15 +21,17 @@ import("gameplay/currentageui.scar")
 
 --Striker functions
 import("gameFunctions/getAttackType.scar") --Checks if someone is team 1 or 2
---import("gameFunctions/getKickAngle.scar") --Calculaters input angle of a deer kick
+import("gameFunctions/getEntityType.scar")
+import("gameFunctions/getKickAngle.scar") --Calculaters input angle of a deer kick
 import("gameFunctions/getKickDirection.scar") --Checks kick direction N/E/S/W
 import("gameFunctions/getTeamFromPlayer.scar") --Checks if someone is team 1 or 2
 import("gameFunctions/handleAgeAndResources.scar") --sets resources to 0 and age to 4
 import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 --import("gameFunctions/handleTackle.scar") --Handles damage receival
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
+import("gameFunctions/handleUnitHeight.scar") --Fixes y position for moved units
 import("gameFunctions/mapClear.scar") --Clears map
-import("gameFunctions/spawnDeer.scar") --Spawns the deer
+import("gameFunctions/spawnBall.scar") --Spawns the ball
 import("gameFunctions/spawnLines.scar") --Spawns all game lines
 import("gameFunctions/spawnUnit.scar") --Spawns a unit
 
@@ -53,16 +55,25 @@ Core_RegisterModule(_mod.module)
 -----------------------------------------------------------------------
 -- Constants  
 -----------------------------------------------------------------------
+gameState = {}
+gameState.phase = "WarmUp"
+
 positions = {}
-positions.arenaHeight = 18.5
-positions.center = World_Pos(0, positions.arenaHeight, 0)
+positions.arenaHeight = 5
+positions.center = World_Pos(0, positions.arenaHeight+1, 0)
+
 
 
 lines = {}
-lines.zLineTop = 0-200
-lines.zLineBottom = 0+200
-lines.xLineTop = 0+400
-lines.xLineBottom = 0-400
+lines.middle = 0
+lines.zLineTop = lines.middle+65
+lines.zLineBottom = lines.middle-65
+lines.xLineTop = lines.middle+140
+lines.xLineBottom = lines.middle-140
+lines.zGoalTop = lines.zLineTop-50
+lines.zGoalBottom = lines.zLineBottom+50
+lines.xGoalTop = lines.xLineTop + 30
+lines.xGoalBottom = lines.xLineBottom - 30
 -----------------------------------------------------------------------
 -- Scripting framework 
 -----------------------------------------------------------------------
@@ -70,7 +81,6 @@ lines.xLineBottom = 0-400
 -- Called during load as part of the game setup sequence
 function Mod_OnGameSetup()
 	print("Mod_OnGameSetup")
-	
 	
 end
 
@@ -94,17 +104,84 @@ function Mod_OnInit()
 end
 
 function handleOnTick()	
+	handleBall()
 	for i, player in pairs(PLAYERS) do
 		local allEntities = Player_GetAllEntities(player.id)
 		--local cav = EGroup_Filter(allEntities, "cavalry", FILTER_KEEP)
-		EGroup_ForEach(allEntities, checkOutside)
+		EGroup_ForEach(allEntities, handleUnitOutside)
 	end
 	
 end
 
-function checkUnitOutside(groupid, itemindex, unit)	
+function handleBall()
+	if ball == nil or gamestate.phase ~= "inGame" then
+		return
+	end
+	local ballPosition = Entity_GetPosition(ball)
+	local yBall = World_GetHeightAt(ballPosition.x, ballPosition.z)
+	ballPosition.y = yBall
+	Entity_SetPosition(ball, ballPosition)	
+	if ball.x > lines.xGoalBottom and 
+		ball.x < lines.xLineBottom and
+		ball.z < lines.zGoalTop and
+		ball.z > lines.zGoalBottom then
+		handleGoal("team1")
+		return
+	end
+	if ball.x < lines.xGoalTop and 
+		ball.x > lines.xLineTop and
+		ball.z < lines.zGoalTop and
+		ball.z > lines.zGoalBottom then
+		handleGoal("team2")
+		return
+	end
+	handleUnitOutside(nil, nil, ball)
 	print("test")
+end
+
+function handleGoal(team)
+	if team == "team1" then
+		teams.score.team1 = teams.score.team1 + 1
+	end
+	if team == "team2" then
+		teams.score.team2 = teams.score.team2 + 1
+	end
+	gameState.phase = "preparing"
+end	
+
+function handleUnitOutside(groupid, itemindex, unit)
 	local entityPosition = Entity_GetPosition(unit)
+	local entityType = getEntityType(unit)
+	if entityType == "gaia" and groupid ~= nil then 
+		return
+	end
+	local flatPush = 2
+	local differenceMultiplier = 0.35
+	if entityPosition.x >= lines.xLineTop then
+		local difference = (math.abs(entityPosition.x - lines.xLineTop))
+		entityPosition.x = lines.xLineTop - (difference * differenceMultiplier) - flatPush
+		Entity_SetPosition(unit, entityPosition)
+		handleUnitHeight(unit)
+	end
+	if entityPosition.x <= lines.xLineBottom then
+		local difference = (math.abs(entityPosition.x - lines.xLineBottom))
+		entityPosition.x = lines.xLineBottom + (difference * differenceMultiplier) + flatPush
+		Entity_SetPosition(unit, entityPosition)
+		handleUnitHeight(unit)
+	end
+	if entityPosition.z >= lines.zLineTop then
+		local difference = (math.abs(entityPosition.z - lines.zLineTop))
+		entityPosition.z = lines.zLineTop - (difference * differenceMultiplier) - flatPush
+		Entity_SetPosition(unit, entityPosition)
+		handleUnitHeight(unit)
+	end
+	if entityPosition.z <= lines.zLineBottom then
+		local difference = (math.abs(entityPosition.z - lines.zLineBottom))
+		entityPosition.z = lines.zLineBottom + (difference * differenceMultiplier) + flatPush
+		Entity_SetPosition(unit, entityPosition)
+		handleUnitHeight(unit)		
+	end
+
 	return false
 end
 
@@ -138,8 +215,7 @@ function handleDamage(ctx)
 	if attackType == "cavToMan" or attackType == "spearToCav" or attackType == "manToSpear" then
 		if attackerTeam == "team1" then
 			attackerLocation.x = attackerLocation.x - attackerOffset
-			tackledLocation.x = tackledLocation.x + tackledOffset
-			
+			tackledLocation.x = tackledLocation.x + tackledOffset			
 		end
 		if attackerTeam == "team2" then
 			attackerLocation.x = attackerLocation.x + attackerOffset
@@ -172,12 +248,7 @@ function handleDamage(ctx)
 	end
 end
 
-function getKickAngle(kickLocation, deerLocation, kickDirection)
-	local xLength = math.abs(deerLocation.x - kickLocation.x)
-	local zLength = math.abs(deerLocation.z - kickLocation.z)
-	local angle = math.atan(xLength/zLength)
-	return angle
-end
+
 
 function setNewDeerPosition(kickLocation, deerLocation, ball, kickDirection, kickAngle, attackType)
 	--Distance ball and kicker are travelling
@@ -223,6 +294,7 @@ function Mod_Start()
 	print("Mod_Start")
 	for i, player in pairs(PLAYERS) do
 		handleAgeAndResources(player.id)
+		setMarchingDrills(player.id)
 	end
 	FOW_RevealAll()
 	
@@ -241,8 +313,13 @@ function Mod_Start()
 		spawnUnit("maa", World_Pos(0, 12, 80), player.id)
 	end
 	spawnLines()
-	spawnDeer(positions.center)
+	spawnBall(positions.center)
 	Rule_AddInterval(handleOnTick, 1)
+end
+
+function setMarchingDrills(playerId)
+	marchingDrills = BP_GetUpgradeBlueprint("upgrade_infantry_marching_drills_hre")
+	Player_CompleteUpgrade(playerId, marchingDrills)
 end
 
 -- Called when Core_SetPlayerDefeated() is invoked. Signals that a player has been eliminated from play due to defeat.

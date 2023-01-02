@@ -9,13 +9,13 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane>
         <LayoutDocument Title="Render" ContentId="EssenceEditor.Render" LastActivationTimeStamp="01/01/2023 00:40:28" />
-        <LayoutDocument Title="projectStrikerMap.lua" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 02:50:51" />
-        <LayoutDocument Title="ebps" ContentId="Category|ebps" LastActivationTimeStamp="01/01/2023 01:08:51" />
-        <LayoutDocument Title="map_gen\map_gen_layout" ContentId="Category|map_gen\map_gen_layout" LastActivationTimeStamp="01/01/2023 02:50:02" />
+        <LayoutDocument Title="projectStrikerMap.lua" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Lua|assets\scar\terrainlayout\projectStrikerMap.lua" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerMap\assets\scar\terrainlayout\projectStrikerMap.lua" LastActivationTimeStamp="01/01/2023 22:39:26" />
+        <LayoutDocument Title="ebps" ContentId="Category|ebps" LastActivationTimeStamp="01/01/2023 22:38:09" />
+        <LayoutDocument Title="upgrade" ContentId="Category|upgrade" LastActivationTimeStamp="01/01/2023 22:38:31" />
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="01/01/2023 02:03:05" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" IsSelected="True" ContentId="ErrorList" LastActivationTimeStamp="01/01/2023 02:29:39" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" IsSelected="True" ContentId="ErrorList" LastActivationTimeStamp="01/01/2023 22:07:26" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="07/28/2020 09:55:15" />
       </LayoutAnchorablePane>
     </LayoutPanel>
@@ -37,7 +37,7 @@
   <BottomSide />
   <FloatingWindows />
   <Hidden>
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Transformation" IsSelected="True" ContentId="ScenarioEditor.Transformation" FloatingLeft="200" FloatingTop="200" FloatingWidth="250" FloatingHeight="300" LastActivationTimeStamp="01/01/2023 01:04:54" PreviousContainerId="78c06263-eb86-40c1-8abf-6d89a3781df0" PreviousContainerIndex="0" />
-    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Painter" IsSelected="True" ContentId="ScenarioEditor.Painter" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="01/01/2023 01:04:54" PreviousContainerId="eb77d0b6-7e97-4570-92cf-6deea9829e3b" PreviousContainerIndex="1" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Transformation" IsSelected="True" ContentId="ScenarioEditor.Transformation" FloatingLeft="200" FloatingTop="200" FloatingWidth="250" FloatingHeight="300" LastActivationTimeStamp="01/01/2023 22:06:48" PreviousContainerId="78c06263-eb86-40c1-8abf-6d89a3781df0" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Painter" IsSelected="True" ContentId="ScenarioEditor.Painter" FloatingLeft="200" FloatingTop="200" FloatingWidth="300" FloatingHeight="800" LastActivationTimeStamp="01/01/2023 22:06:48" PreviousContainerId="eb77d0b6-7e97-4570-92cf-6deea9829e3b" PreviousContainerIndex="1" />
   </Hidden>
 </LayoutRoot>

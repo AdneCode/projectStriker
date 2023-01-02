@@ -1,0 +1,13 @@
+function getEntityType(entity)
+	local entityType = "gaia"	
+	if Entity_IsOfType(entity, "cavalry") then
+		entityType = "cavalry"
+	end
+	if Entity_IsOfType(entity, "manatarms") then
+		entityType = "manatarms"
+	end
+	if Entity_IsOfType(entity, "spearman") then
+		entityType = "spearman"
+	end
+	return entityType
+end

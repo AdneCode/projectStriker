@@ -45,6 +45,7 @@
 			<DataObject Name="" Type="PrecacheList" Id="4621369252002233672" OwnerId="5049883619737921037">
 				<DataProperty Name="m_precacheItems" Type="Object">
 					<DataValue Name="EntityPrecacheItem">15562600493518975461</DataValue>
+					<DataValue Name="EntityPrecacheItem">16189326815702056854</DataValue>
 					<!--WinCondition/PrecacheList/EntityPrecacheItem/-->
 					<DataObject Name="" Type="EntityPrecacheItem" Id="15562600493518975461" OwnerId="4621369252002233672">
 						<DataProperty Name="#BaseTypes" Type="String" Value="IPrecacheItem#0|"/>
@@ -54,6 +55,18 @@
 							<DataObject Name="" Type="ReflectPBG_EntityProperties" Id="15207517769905124790" OwnerId="15562600493518975461">
 								<DataProperty Name="#BaseTypes" Type="String" Value="PropertyBagGroupReflectReference#0|Provider_PropertyBagGroup#0|"/>
 								<DataProperty Name="m_fileName" Type="String" Value="unit_spearman_3_hre"/>
+							</DataObject>
+						</DataProperty>
+					</DataObject>
+					<!--WinCondition/PrecacheList/EntityPrecacheItem/-->
+					<DataObject Name="" Type="EntityPrecacheItem" Id="16189326815702056854" OwnerId="4621369252002233672">
+						<DataProperty Name="#BaseTypes" Type="String" Value="IPrecacheItem#0|"/>
+						<DataProperty Name="m_blueprint" Type="Object">
+							<DataValue Name="ReflectPBG_EntityProperties">2958079043227466610</DataValue>
+							<!--WinCondition/PrecacheList/EntityPrecacheItem/ReflectPBG_EntityProperties/-->
+							<DataObject Name="" Type="ReflectPBG_EntityProperties" Id="2958079043227466610" OwnerId="16189326815702056854">
+								<DataProperty Name="#BaseTypes" Type="String" Value="PropertyBagGroupReflectReference#0|Provider_PropertyBagGroup#0|"/>
+								<DataProperty Name="m_fileName" Type="String" Value="birch_tall_wild_scatter"/>
 							</DataObject>
 						</DataProperty>
 					</DataObject>
