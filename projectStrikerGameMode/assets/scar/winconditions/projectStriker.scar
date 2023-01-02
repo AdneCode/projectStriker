@@ -109,12 +109,15 @@ end
 function getTeamSpawns()
 	local teamSpawns = {}
 	teamSpawns.team1 = generateTeamSpawns("team1")	
-	teamSpawns.team2 = generateTeamSpawns("team2")	
-	function generateTeamSpawns(team)
+	teamSpawns.team2 = generateTeamSpawns("team2")		
+	return teamSpawns
+end
+
+function generateTeamSpawns(team)
 		local spawns = {}
 		local teamTable
 		local xLineStart
-		local xLineStart		
+		local zLineStart		
 		local playerCount
 		if team == "team1" then
 			playerCount = #teams.team1
@@ -122,8 +125,8 @@ function getTeamSpawns()
 		if team == "team2" then
 			playerCount = #teams.team2
 		end
-		local xUnitOffset = math.abs(xLineTop - xLineBottom - lines.xSpawnOffset*2) / playerCount
-		local zUnitOffset = math.abs(zLineTop - zLineBottom - lines.zSpawnOffset*2) / playerCount
+		local xUnitOffset = math.abs(lines.xLineTop - lines.xLineBottom - lines.xSpawnOffset*2) / playerCount
+		local zUnitOffset = math.abs(lines.zLineTop - lines.zLineBottom - lines.zSpawnOffset*2) / playerCount
 		local unitCount = playerCount * 3
 		local cavTable = {}
 		local spearTable = {} 
@@ -131,50 +134,50 @@ function getTeamSpawns()
 		if team == "team1" then
 			teamTable = teams.team1
 			xLineStart = lines.middle - lines.xSpawnOffset
-			zLineStart = zLineTop - lines.zSpawnOffset	
+			zLineStart = lines.zLineTop - lines.zSpawnOffset	
 			for i = 0, unitCount do
 			    if i < unitCount / 3 then
 				    local position = {}
 				    position.x =  xLineStart - (i * xUnitOffset) 
 				    position.z = zLineStart - (i * zUnitOffset) 
-				    table.insert(spearTable, i, position)
+				    table.insert(spearTable, i+1, position)
 			    end
 			    if i >= unitCount / 3 and i < (unitCount / 3) * 2 then
 			    	local position = {}
 			    	position.x =  xLineStart - (i * xUnitOffset) 
 		    		position.z = zLineStart - (i * zUnitOffset) 
-		    		table.insert(maaTable, i, position)
+		    		table.insert(maaTable, i+1-(unitCount / 3), position)
 		    	end
 		    	if i >= (unitCount / 3) * 2 then
 		    		local position = {}
 		    		position.x =  xLineStart - (i * xUnitOffset) 
 		    		position.z = zLineStart - (i * zUnitOffset) 
-		    		table.insert(cavTable, i, position)
+		    		table.insert(cavTable, i+1-((unitCount / 3) * 2), position)
 			    end
 	    	end        
 		end
 		if team == "team2" then
 			teamTable = teams.team2
 			xLineStart = lines.middle + lines.xSpawnOffset
-			zLineStart = zLineTop + lines.zSpawnOffset
+			zLineStart = lines.zLineTop + lines.zSpawnOffset
 			for i = 0, unitCount do
 				if i < unitCount / 3 then
 					local position = {}
 					position.x =  xLineStart + (i * xUnitOffset) 
 					position.z = zLineStart + (i * zUnitOffset) 
-					table.insert(spearTable, i, position)
+					table.insert(spearTable, i+1, position)
 				end
 				if i >= unitCount / 3 and i < (unitCount / 3) * 2 then
 					local position = {}
 					position.x =  xLineStart + (i * xUnitOffset) 
 					position.z = zLineStart + (i * zUnitOffset) 
-					table.insert(maaTable, i, position)
+					table.insert(maaTable, i+1-(unitCount / 3), position)
 				end
 				if i >= (unitCount / 3) * 2 then
 					local position = {}
 					position.x =  xLineStart + (i * xUnitOffset) 
 					position.z = zLineStart + (i * zUnitOffset) 
-					table.insert(cavTable, i, position)
+					table.insert(cavTable, i+1-((unitCount / 3) * 2), position)
 				end
 			end
 			
@@ -184,8 +187,6 @@ function getTeamSpawns()
 		spawns.maaTable = maaTable
 		return spawns
 	end
-	return teamSpawns
-end
 
 function handleOnTick()	
 	handleBall()

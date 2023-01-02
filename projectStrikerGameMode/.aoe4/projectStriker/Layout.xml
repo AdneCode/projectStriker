@@ -9,7 +9,7 @@
     <LayoutPanel Orientation="Vertical">
       <LayoutDocumentPane Id="822ca923-9e1a-434e-8634-8ac0ac57452f">
         <LayoutDocument Title="handleTeams.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTeams.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTeams.scar" LastActivationTimeStamp="01/02/2023 19:08:21" />
-        <LayoutDocument Title="projectStriker.scar*" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\winconditions\projectStriker.scar" FloatingLeft="-544" FloatingTop="125" FloatingWidth="1308" FloatingHeight="590" LastActivationTimeStamp="01/02/2023 19:46:06" PreviousContainerId="822ca923-9e1a-434e-8634-8ac0ac57452f" PreviousContainerIndex="1" />
+        <LayoutDocument Title="projectStriker.scar" IsSelected="True" IsLastFocusedDocument="True" ContentId="FileName|Script|assets\scar\winconditions\projectStriker.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\winconditions\projectStriker.scar" FloatingLeft="-544" FloatingTop="125" FloatingWidth="1308" FloatingHeight="590" LastActivationTimeStamp="01/02/2023 20:09:39" PreviousContainerId="822ca923-9e1a-434e-8634-8ac0ac57452f" PreviousContainerIndex="1" />
         <LayoutDocument Title="spawnLines.scar" ContentId="FileName|Script|assets\scar\gameFunctions\spawnLines.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnLines.scar" LastActivationTimeStamp="01/02/2023 19:05:36" />
         <LayoutDocument Title="getKickAngle.scar" ContentId="FileName|Script|assets\scar\gameFunctions\getKickAngle.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getKickAngle.scar" LastActivationTimeStamp="01/02/2023 19:05:36" />
         <LayoutDocument Title="handleTackle.scar" ContentId="FileName|Script|assets\scar\gameFunctions\handleTackle.scar" ToolTip="C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTackle.scar" LastActivationTimeStamp="01/02/2023 04:18:39" />
@@ -22,12 +22,12 @@
       </LayoutDocumentPane>
       <LayoutAnchorablePane Id="1b84d0aa-3fd1-4781-909d-fa3e4b760d6d" Name="anchorablesPane" DockHeight="300">
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Output" ContentId="Output" LastActivationTimeStamp="01/02/2023 04:57:47" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" IsSelected="True" ContentId="ErrorList" LastActivationTimeStamp="01/02/2023 19:46:06" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Error List" ContentId="ErrorList" LastActivationTimeStamp="01/02/2023 19:46:06" />
         <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Object Browser" ContentId="ScenarioEditor.ObjectBrowser" LastActivationTimeStamp="01/02/2023 04:20:09" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Call Stack" ContentId="CallStack" LastActivationTimeStamp="01/02/2023 19:05:30" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="01/02/2023 19:05:30" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="01/02/2023 19:05:30" />
-        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" ContentId="Globals" LastActivationTimeStamp="01/02/2023 19:09:08" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Call Stack" IsSelected="True" ContentId="CallStack" LastActivationTimeStamp="01/02/2023 20:09:37" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Watch 1" ContentId="Watch1" LastActivationTimeStamp="01/02/2023 20:09:37" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Locals" ContentId="Locals" LastActivationTimeStamp="01/02/2023 20:09:37" />
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Globals" ContentId="Globals" LastActivationTimeStamp="01/02/2023 20:09:37" />
       </LayoutAnchorablePane>
     </LayoutPanel>
     <LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" DockHeight="200">
