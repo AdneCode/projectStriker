@@ -8,7 +8,10 @@
 				<d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
-						<d2p1:string>assets\scar\gameFunctions\spawnLines.scar</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\getEntityType.scar</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\handleTeams.scar</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\handleUnitHeight.scar</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions\mapClear.scar</d2p1:string>
 						<d2p1:string>assets\scar\winconditions</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
@@ -22,7 +25,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>142</d3p1:Line>
+					<d3p1:Line>218</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -39,7 +42,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>144</d3p1:Line>
+					<d3p1:Line>220</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -56,7 +59,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>143</d3p1:Line>
+					<d3p1:Line>219</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -73,7 +76,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>145</d3p1:Line>
+					<d3p1:Line>221</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -90,7 +93,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>146</d3p1:Line>
+					<d3p1:Line>222</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -107,7 +110,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>147</d3p1:Line>
+					<d3p1:Line>223</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -124,7 +127,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>148</d3p1:Line>
+					<d3p1:Line>224</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -141,7 +144,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>107</d3p1:Line>
+					<d3p1:Line>183</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -158,7 +161,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>108</d3p1:Line>
+					<d3p1:Line>184</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -175,7 +178,7 @@
 					<d3p1:Column>1</d3p1:Column>
 					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
 					<d3p1:IsEnabled>true</d3p1:IsEnabled>
-					<d3p1:Line>109</d3p1:Line>
+					<d3p1:Line>185</d3p1:Line>
 					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
 						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
 						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
@@ -193,16 +196,16 @@
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\mapClear.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleUnitHeight.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getEntityType.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnLines.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnBall.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleDamage.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTackle.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getKickAngle.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getAttackType.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getEntityType.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleUnitHeight.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnDeer.scar</d3p1:string>
 		</History>
 	</RecentFiles>
 </ProjectSettings>

@@ -9,6 +9,10 @@ function mapClear()
 		
 		local trashedBuildings = Player_GetAllEntities(player.id)	
 		EGroup_DestroyAllEntities(trashedBuildings)	
-		EGroup_Destroy(trashedBuildings)			
+		EGroup_Destroy(trashedBuildings)	
+		if ball == nil then
+			return
+		end
+		Entity_DeSpawn(ball)
 	end
 end

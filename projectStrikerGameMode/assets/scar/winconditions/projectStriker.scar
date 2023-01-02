@@ -58,22 +58,24 @@ Core_RegisterModule(_mod.module)
 gameState = {}
 gameState.phase = "WarmUp"
 
+lines = {}
+lines.middle = 0
+lines.zLineTop = lines.middle+55
+lines.zLineBottom = lines.middle-55
+lines.xLineTop = lines.middle+100
+lines.xLineBottom = lines.middle-100
+lines.zGoalTop = lines.zLineTop-35
+lines.zGoalBottom = lines.zLineBottom+35
+lines.xGoalTop = lines.xLineTop + 35
+lines.xGoalBottom = lines.xLineBottom - 35
+lines.xSpawnOffset = 15
+lines.zSpawnOffset = 5
+
 positions = {}
 positions.arenaHeight = World_GetHeightAt(0,0)
 positions.center = World_Pos(0, positions.arenaHeight+1, 0)
 
 
-
-lines = {}
-lines.middle = 0
-lines.zLineTop = lines.middle+55
-lines.zLineBottom = lines.middle-55
-lines.xLineTop = lines.middle+120
-lines.xLineBottom = lines.middle-120
-lines.zGoalTop = lines.zLineTop-40
-lines.zGoalBottom = lines.zLineBottom+40
-lines.xGoalTop = lines.xLineTop + 30
-lines.xGoalBottom = lines.xLineBottom - 30
 -----------------------------------------------------------------------
 -- Scripting framework 
 -----------------------------------------------------------------------
@@ -97,10 +99,86 @@ function Mod_OnInit()
 	print("Mod_OnInit")
 	localPlayer = Core_GetPlayersTableEntry(Game_GetLocalPlayer())	
 	mapClear()
+	FOW_RevealAll()
 	handleCivs()
 	teams = handleTeams()
-	Rule_AddGlobalEvent(handleDamage, GE_DamageReceived)
+	positions.teamSpawns = getTeamSpawns()
+	Rule_AddGlobalEvent(handleDamage, GE_DamageReceived)	
+end
+
+function getTeamSpawns()
+	local spawns = {}
+	spawns.team1 = generateTeamSpawns("team1")	
+	spawns.team2 = generateTeamSpawns("team2")
+
 	
+	function generateTeamSpawns(team)
+		local spawns = {}
+		local teamTable
+		local xLineStart
+		local xLineStart
+		
+		
+		local playerCount = #team
+		local xUnitOffset = math.abs(xLineTop - xLineBottom - lines.xSpawnOffset*2) / playerCount
+		local zUnitOffset = math.abs(zLineTop - zLineBottom - lines.zSpawnOffset*2) / playerCount
+		local unitCount = playerCount * 3
+		local cavTable = {}
+		local spearTable = {} 
+		local maaTable = {}
+		if team == "team1" then
+			teamTable = teams.team1
+			xLineStart = lines.middle - lines.xSpawnOffset
+			zLineStart = zLineTop - lines.zSpawnOffset	
+			for i = 0, unitCount do
+			if i < unitCount / 3 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(spearTable, i, position)
+			end
+			if i >= unitCount / 3 and i < (unitCount / 3) * 2 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(maaTable, i, position)
+			end
+			if i >= (unitCount / 3) * 2 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(cavTable, i, position)
+			end
+		end
+		end
+		if team == "team2" then
+			teamTable = teams.team2
+			xLineStart = lines.middle + lines.xSpawnOffset
+			zLineStart = zLineTop + lines.zSpawnOffset
+			for i = 0, unitCount do
+			if i < unitCount / 3 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(spearTable, i, position)
+			end
+			if i >= unitCount / 3 and i < (unitCount / 3) * 2 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(maaTable, i, position)
+			end
+			if i >= (unitCount / 3) * 2 then
+				local position = {}
+				position.x =  xLineStart - (i * xUnitOffset) 
+				position.z = zLineStart - (i * zUnitOffset) 
+				table.insert(cavTable, i, position)
+			end
+		end
+		end		
+		
+		
+	end
 end
 
 function handleOnTick()	
@@ -154,35 +232,35 @@ function handleUnitOutside(groupid, itemindex, unit)
 	if entityType == "gaia" and groupid ~= nil then 
 		return
 	end
-	local flatPush = World_GetRand(2, 5)
-	local differenceMultiplier = 0.35
-	if entityPosition.x >= lines.xLineTop then
+	local flatPush = World_GetRand(2, 5)	
+	local differenceMultiplier = 0.45
+	local yEntityAddition = 3
+	if entityType == "cavalry" then
+		yEntityAddition = 10
+	end
+	if entityPosition.x >= lines.xLineTop then	
 		local difference = (math.abs(entityPosition.x - lines.xLineTop))
 		entityPosition.x = lines.xLineTop - (difference * differenceMultiplier) - flatPush
-		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + yEntityAddition
 		Entity_SetPosition(unit, entityPosition)
-		handleUnitHeight(unit)
 	end
 	if entityPosition.x <= lines.xLineBottom then
 		local difference = (math.abs(entityPosition.x - lines.xLineBottom))
-		entityPosition.x = lines.xLineBottom + (difference * differenceMultiplier) + flatPush
-		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
+		entityPosition.x = lines.xLineBottom + (difference * differenceMultiplier) + flatPush		
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + yEntityAddition
 		Entity_SetPosition(unit, entityPosition)
-		handleUnitHeight(unit)
 	end
 	if entityPosition.z >= lines.zLineTop then
 		local difference = (math.abs(entityPosition.z - lines.zLineTop))
 		entityPosition.z = lines.zLineTop - (difference * differenceMultiplier) - flatPush
-		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
-		Entity_SetPosition(unit, entityPosition)
-		handleUnitHeight(unit)
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + yEntityAddition
+		Entity_SetPosition(unit, entityPosition)		
 	end
 	if entityPosition.z <= lines.zLineBottom then
 		local difference = (math.abs(entityPosition.z - lines.zLineBottom))
 		entityPosition.z = lines.zLineBottom + (difference * differenceMultiplier) + flatPush
-		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + 1
-		Entity_SetPosition(unit, entityPosition)
-		handleUnitHeight(unit)		
+		entityPosition.y = World_GetHeightAt(entityPosition.x, entityPosition.z) + yEntityAddition
+		Entity_SetPosition(unit, entityPosition)			
 	end
 
 	return false
@@ -295,8 +373,17 @@ function Mod_Start()
 		handleAgeAndResources(player.id)
 		setMarchingDrills(player.id)
 	end
-	FOW_RevealAll()
 	
+	
+	
+	spawnLines()
+	setInGame()
+	Rule_AddInterval(handleOnTick, 1)
+end
+
+function setInGame()
+	gameState.phase = "inGame"
+	mapClear()
 	for i, player in pairs(teams.team1) do
 		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
 		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
@@ -307,9 +394,7 @@ function Mod_Start()
 		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
 		spawnUnit("maa", World_Pos(0, 12, 45), player.id)
 	end
-	spawnLines()
 	spawnBall(positions.center)
-	Rule_AddInterval(handleOnTick, 1)
 end
 
 function setMarchingDrills(playerId)

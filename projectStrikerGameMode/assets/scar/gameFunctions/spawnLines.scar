@@ -4,13 +4,13 @@ function spawnLines()
 	local ebpRelic = BP_GetEntityBlueprint("relic")
 	local ebpTree = BP_GetEntityBlueprint("birch_tall_wild_scatter")
 	--Grid related
-	local xGridCount = 14
+	local xGridCount = 15
 	local xLength = math.abs(lines.xLineTop-lines.xLineBottom) / xGridCount
-	local zGridCount = 7
+	local zGridCount = 9
 	local zLength = math.abs(lines.zLineTop-lines.zLineBottom) / zGridCount
-	local xGoalGridCount = 8
+	local xGoalGridCount = 10
 	local xGoalLength = math.abs(lines.xGoalTop-lines.xLineTop) / xGoalGridCount
-	local zGoalGridCount = 10
+	local zGoalGridCount = 12
 	local zGoalLength = math.abs(lines.zGoalTop-lines.zGoalBottom) / zGoalGridCount
 	--Draw north and south line
 	for i = 0, xGridCount do
@@ -30,7 +30,7 @@ function spawnLines()
 	
 	--TryLines
 	for i = 0, zGridCount do
-		if i ~= 3 and i ~=4 then
+		if i < 3 or i > 6 then
 			local position = {}	
 			position.x = lines.xLineTop
 			position.y = positions.arenaHeight-1
