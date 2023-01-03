@@ -31,6 +31,7 @@ import("gameFunctions/handleCivs.scar") --Kicks people not HRE
 import("gameFunctions/handleTeams.scar") --Kicks people not in team 1 or 2
 import("gameFunctions/handleUnitHeight.scar") --Fixes y position for moved units
 import("gameFunctions/mapClear.scar") --Clears map
+import("gameFunctions/setCamera.scar") --Changes camera to position
 import("gameFunctions/setNewBallPosition.scar") --Moves the ball
 import("gameFunctions/spawnBall.scar") --Spawns the ball
 import("gameFunctions/spawnLines.scar") --Spawns all game lines
@@ -57,7 +58,7 @@ Core_RegisterModule(_mod.module)
 -- Constants  
 -----------------------------------------------------------------------
 gameState = {}
-gameState.phase = "WarmUp"
+gameState.phase = "warmUp"
 
 lines = {}
 lines.middle = 0
@@ -69,15 +70,13 @@ lines.zGoalTop = lines.zLineTop-35
 lines.zGoalBottom = lines.zLineBottom+35
 lines.xGoalTop = lines.xLineTop + 35
 lines.xGoalBottom = lines.xLineBottom - 35
-lines.xSpawnOffset = 5
-lines.zSpawnOffset = 3
-lines.xLineOffset = 15
-lines.zLineOffset = 5
+lines.xLineOffset = 31.5
+lines.zLineOffset = 7.5
 
 positions = {}
 positions.arenaHeight = World_GetHeightAt(0,0)
 positions.center = World_Pos(0, positions.arenaHeight+1, 0)
-positions.spawnHeight = positions.arenaHeight + 2
+positions.spawnHeight = positions.arenaHeight+1.2
 
 
 -----------------------------------------------------------------------
@@ -128,18 +127,18 @@ function generateTeamSpawns(team)
 		if team == "team2" then
 			playerCount = #teams.team2
 		end
-		local xUnitOffset = math.abs(lines.xLineTop - lines.xLineBottom - lines.xLineOffset*2) / playerCount
-		local zUnitOffset = math.abs(lines.zLineTop - lines.zLineBottom - lines.zLineOffset*2) / playerCount
 		local unitCount = playerCount * 3
 		spawns.unitCount = unitCount
+		local xUnitOffset = ((math.abs(lines.middle - lines.xLineBottom)-lines.xLineOffset*2) / unitCount) * 0.8
+		local zUnitOffset = ((math.abs(lines.zLineTop - lines.zLineBottom)-lines.zLineOffset*2) / unitCount) * 0.8
 		local cavTable = {}
 		local spearTable = {} 
 		local maaTable = {}
 	
 		if team == "team1" then
 			local teamTable = teams.team1
-			xLineStart = lines.middle - lines.xSpawnOffset
-			zLineStart = lines.zLineTop - lines.zSpawnOffset
+			xLineStart = lines.middle - lines.xLineOffset
+			zLineStart = lines.zLineTop - lines.zLineOffset
 			for i = 0, unitCount-1 do
 				 if i < (unitCount / 3) then
 					local position = {}
@@ -163,8 +162,8 @@ function generateTeamSpawns(team)
 		end		
 		if team == "team2" then
 			local teamTable = teams.team2
-			xLineStart = lines.middle + lines.xSpawnOffset
-			zLineStart = lines.zLineTop + lines.zSpawnOffset
+			xLineStart = lines.middle + lines.xLineOffset
+			zLineStart = lines.zLineBottom + lines.zLineOffset
 			for i = 0, unitCount-1 do
 				 if i < (unitCount / 3) then
 					local position = {}
@@ -233,7 +232,10 @@ function handleGoal(team)
 	if team == "team2" then
 		teams.score.team2 = teams.score.team2 + 1
 	end
+	local ballPosition = Entity_GetPosition(ball)
+	setCamera(ballPosition)
 	gameState.phase = "preparing"
+	Rule_AddOneShot(setInGame, 5)
 end	
 
 function handleUnitOutside(groupid, itemindex, unit)
@@ -345,26 +347,22 @@ function Mod_Start()
 		setMarchingDrills(player.id)
 	end		
 	spawnLines()
+	gameState.phase = "preparing"
 	setInGame()	
 end
 
 function setInGame()
 	mapClear()
-	gameState.phase = "inGame"	
-	for i, player in pairs(teams.team1) do
-		spawnUnit("knight", World_Pos(33, 12, 45), player.id)
-		spawnUnit("spear", World_Pos(33, 12, 45), player.id)
-		spawnUnit("maa", World_Pos(33, 12, 45), player.id)
-	end
-	for i, player in pairs(teams.team2) do
-		spawnUnit("knight", World_Pos(0, 12, 45), player.id)
-		spawnUnit("spear", World_Pos(0, 12, 1), player.id)
-		spawnUnit("maa", World_Pos(0, 12, 45), player.id)
-	end
+	gameState.phase = "inGame"
+	setCamera(positions.center)
 	spawnBall(positions.center)
+	Rule_AddOneShot(spawnTeams, 5)
+	Rule_AddInterval(handleOnTick, 1)
+end
+
+function spawnTeams()
 	spawnTeam("team1")
 	spawnTeam("team2")
-	Rule_AddInterval(handleOnTick, 1)
 end
 
 function spawnTeam(team)
@@ -385,13 +383,16 @@ function spawnTeam(team)
 		table.insert(spearIndex, #spearIndex+1, i)
 		table.insert(maaIndex, #maaIndex+1, i)
 	end		
-	for i, player in pairs(selectedTeam) do			
-		local chosenCavIndex = World_GetRand(1, #cavIndex)
-		local chosenSpearIndex = World_GetRand(1, #spearIndex)
-		local chosenMaaIndex = World_GetRand(1, #maaIndex)
-		table.remove(cavIndex, chosenCavIndex)
-		table.remove(spearIndex, chosenSpearIndex)
-		table.remove(maaIndex, chosenMaaIndex)
+	for i, player in pairs(selectedTeam) do	
+		local randomCavIndex = World_GetRand(1, #cavIndex)
+		local randomSpearIndex = World_GetRand(1, #cavIndex)
+		local randomMaaIndex = World_GetRand(1, #cavIndex)
+		local chosenCavIndex =  cavIndex[randomCavIndex]
+		local chosenSpearIndex = spearIndex[randomSpearIndex]
+		local chosenMaaIndex = maaIndex[randomMaaIndex]
+		table.remove(cavIndex, randomCavIndex)
+		table.remove(spearIndex, randomSpearIndex)
+		table.remove(maaIndex, randomMaaIndex)
 		local knightPosition = World_Pos(availableSpawns.cavTable[chosenCavIndex].x, positions.spawnHeight, availableSpawns.cavTable[chosenCavIndex].z)
 		local spearPosition = World_Pos(availableSpawns.spearTable[chosenSpearIndex].x, positions.spawnHeight, availableSpawns.spearTable[chosenSpearIndex].z)
 		local maaPosition = World_Pos(availableSpawns.maaTable[chosenMaaIndex].x, positions.spawnHeight, availableSpawns.maaTable[chosenMaaIndex].z)

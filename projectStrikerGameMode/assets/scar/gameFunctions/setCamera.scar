@@ -1,0 +1,9 @@
+--Sets camera for all players to position
+function setCamera(position)
+	for i, player in pairs(PLAYERS) do
+		if player.isLocal then
+			local zoomDistance = Camera_GetZoomDist()
+			Camera_StartPanTo(position, 1, zoomDistance)
+		end
+	end
+end

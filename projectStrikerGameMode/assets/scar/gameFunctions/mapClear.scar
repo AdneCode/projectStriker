@@ -8,6 +8,7 @@ function mapClear()
 		local trashedBuildings = Player_GetAllEntities(player.id)
 		if trashedBuildings ~= nil then
 			EGroup_Filter(trashedBuildings, "gaia", FILTER_REMOVE)
+			EGroup_Filter(trashedBuildings, "relic", FILTER_REMOVE)
 		end
 		EGroup_DestroyAllEntities(trashedBuildings)	
 		EGroup_Destroy(trashedBuildings)
