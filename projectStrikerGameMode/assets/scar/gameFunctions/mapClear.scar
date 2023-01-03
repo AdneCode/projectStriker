@@ -1,18 +1,19 @@
 --Takes PLAYERS table, clears the map of all their entities
 function mapClear()
-	for i, player in pairs(PLAYERS) do
-		
-		local trashedUnits = Player_GetSquads(player.id)		
+	for i, player in pairs(PLAYERS) do		
+		local trashedUnits = Player_GetSquads(player.id)	
 		SGroup_Kill(trashedUnits)
 		SGroup_DeSpawn(trashedUnits)
-		SGroup_Clear(trashedUnits)		
-		
-		local trashedBuildings = Player_GetAllEntities(player.id)	
-		EGroup_DestroyAllEntities(trashedBuildings)	
-		EGroup_Destroy(trashedBuildings)	
-		if ball == nil then
-			return
+		SGroup_Clear(trashedUnits)			
+		local trashedBuildings = Player_GetAllEntities(player.id)
+		if trashedBuildings ~= nil then
+			EGroup_Filter(trashedBuildings, "gaia", FILTER_REMOVE)
 		end
-		Entity_DeSpawn(ball)
+		EGroup_DestroyAllEntities(trashedBuildings)	
+		EGroup_Destroy(trashedBuildings)
 	end
+	if ball == nil then
+		return
+	end
+	Entity_DeSpawn(ball)
 end

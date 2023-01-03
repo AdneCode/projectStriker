@@ -8,10 +8,7 @@
 				<d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
 					<d2p1:Key>AssetExplorerGeneric</d2p1:Key>
 					<d2p1:Value>
-						<d2p1:string>assets\scar\gameFunctions\getEntityType.scar</d2p1:string>
-						<d2p1:string>assets\scar\gameFunctions\handleTeams.scar</d2p1:string>
-						<d2p1:string>assets\scar\gameFunctions\handleUnitHeight.scar</d2p1:string>
-						<d2p1:string>assets\scar\gameFunctions\mapClear.scar</d2p1:string>
+						<d2p1:string>assets\scar\gameFunctions</d2p1:string>
 						<d2p1:string>assets\scar\winconditions</d2p1:string>
 					</d2p1:Value>
 				</d2p1:KeyValueOfstringArrayOfstringty7Ep6D1>
@@ -20,21 +17,124 @@
 		</d2p1:anyType>
 		<d2p1:anyType xmlns:d3p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor" i:type="d3p1:ScriptProjectSettings">
 			<d3p1:BookmarkSettings />
-			<d3p1:BreakpointSettings />
+			<d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>395</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>398</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>389</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>391</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>390</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+				<d3p1:BreakpointSettings>
+					<d3p1:Column>1</d3p1:Column>
+					<d3p1:FileName>FileName|Script|assets\scar\winconditions\projectStriker.scar</d3p1:FileName>
+					<d3p1:IsEnabled>true</d3p1:IsEnabled>
+					<d3p1:Line>392</d3p1:Line>
+					<d3p1:Settings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Essence.Editor.ScriptEditor.Controls">
+						<d6p1:ConditionalExpression></d6p1:ConditionalExpression>
+						<d6p1:ConditionalExpressionEnabled>false</d6p1:ConditionalExpressionEnabled>
+						<d6p1:ConditionalExpressionOperator>IsTrue</d6p1:ConditionalExpressionOperator>
+						<d6p1:HitCount>0</d6p1:HitCount>
+						<d6p1:HitCountEnabled>false</d6p1:HitCountEnabled>
+						<d6p1:HitCountOperator>Equal</d6p1:HitCountOperator>
+						<d6p1:PrintAction></d6p1:PrintAction>
+						<d6p1:PrintActionConsequence>ContinueExecution</d6p1:PrintActionConsequence>
+						<d6p1:PrintActionEnabled>false</d6p1:PrintActionEnabled>
+					</d3p1:Settings>
+				</d3p1:BreakpointSettings>
+			</d3p1:BreakpointSettings>
 		</d2p1:anyType>
 	</PluginSettings>
 	<RecentFiles>
 		<History xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\mapClear.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleUnitHeight.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\setNewBallPosition.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getEntityType.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnTeams.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\mapClear.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTeams.scar</d3p1:string>
+			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleUnitHeight.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\winconditions\projectStriker.rdo</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnLines.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\spawnBall.scar</d3p1:string>
 			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleDamage.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\handleTackle.scar</d3p1:string>
-			<d3p1:string>C:\Users\Adne\Documents\projectStriker\projectStrikerGameMode\assets\scar\gameFunctions\getKickAngle.scar</d3p1:string>
 		</History>
 	</RecentFiles>
 </ProjectSettings>

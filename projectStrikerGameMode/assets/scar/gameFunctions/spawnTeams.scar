@@ -1,0 +1,3 @@
+--spawns all units randomly on all available positions
+function spawnTeams()
+end

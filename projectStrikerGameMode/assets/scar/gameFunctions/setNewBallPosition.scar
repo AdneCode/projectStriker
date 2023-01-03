@@ -1,0 +1,40 @@
+--moves the ball based on the location of the unit, the ball, the current ball position, the kick direction (north, south, east, west), the kick angle in rad and the type of attack
+function setNewBallPosition(kickLocation, deerLocation, ball, kickDirection, kickAngle, attackType)
+	--Distance ball and kicker are travelling
+	local ballOffset = nil
+	local ballOffset = 3
+	local ballOffset =  World_GetRand(1, 5)
+	if attackType == "cavToBall" then
+		ballOffset = 10 + ballOffset
+	end
+	if attackType == "manToBall" then
+		ballOffset = 30 + ballOffset
+	end
+	if attackType == "spearToBall" then
+		ballOffset = 35 + ballOffset +  World_GetRand(1, 4)
+	end	
+	
+	local xLength = math.sin(kickAngle) * ballOffset
+	local zLength = math.cos(kickAngle) * ballOffset
+	local newDeerLocation = deerLocation
+	if kickDirection == "north" then		
+		newDeerLocation.x = newDeerLocation.x + xLength
+		newDeerLocation.z = newDeerLocation.z + zLength
+	end	
+	if kickDirection == "east" then		
+		newDeerLocation.x = newDeerLocation.x + xLength
+		newDeerLocation.z = newDeerLocation.z - zLength
+	end	
+	if kickDirection == "south" then		
+		newDeerLocation.x = newDeerLocation.x - xLength
+		newDeerLocation.z = newDeerLocation.z - zLength
+	end	
+	if kickDirection == "west" then		
+		newDeerLocation.x = newDeerLocation.x - xLength
+		newDeerLocation.z = newDeerLocation.z + zLength
+	end	
+	if newDeerLocation == nil then
+		return
+	end
+	Entity_SetPosition(ball, newDeerLocation)	
+end
