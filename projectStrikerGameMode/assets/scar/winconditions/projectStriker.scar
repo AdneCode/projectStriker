@@ -59,19 +59,22 @@ Core_RegisterModule(_mod.module)
 -----------------------------------------------------------------------
 gameState = {}
 gameState.phase = "warmUp"
+gameState.objective = 5                           
+
+settings = {} 
 
 lines = {}
 lines.middle = 0
 lines.zLineTop = lines.middle+55
 lines.zLineBottom = lines.middle-55
-lines.xLineTop = lines.middle+100
+lines.xLineTop = lines.middle+100             
 lines.xLineBottom = lines.middle-100
-lines.zGoalTop = lines.zLineTop-35
+lines.zGoalTop = lines.zLineTop-35                                                               
 lines.zGoalBottom = lines.zLineBottom+35
 lines.xGoalTop = lines.xLineTop + 35
 lines.xGoalBottom = lines.xLineBottom - 35
 lines.xLineOffset = 31.5
-lines.zLineOffset = 7.5
+lines.zLineOffset = 13.5
 
 positions = {}
 positions.arenaHeight = World_GetHeightAt(0,0)
@@ -86,7 +89,7 @@ positions.spawnHeight = positions.arenaHeight+1.2
 -- Called during load as part of the game setup sequence
 function Mod_OnGameSetup()
 	print("Mod_OnGameSetup")
-	
+	--Setup_GetWinConditionOptions()
 end
 
 -- Called before initialization, preceding other module OnInit functions
@@ -96,7 +99,7 @@ function Mod_PreInit()
 	Core_CallDelegateFunctions("TributeEnabled", true)
 	
 end
-
+                                  
 -- Called on match initialization before handing control to the player
 function Mod_OnInit()
 	print("Mod_OnInit")
@@ -130,7 +133,7 @@ function generateTeamSpawns(team)
 		local unitCount = playerCount * 3
 		spawns.unitCount = unitCount
 		local xUnitOffset = ((math.abs(lines.middle - lines.xLineBottom)-lines.xLineOffset*2) / unitCount) * 0.8
-		local zUnitOffset = ((math.abs(lines.zLineTop - lines.zLineBottom)-lines.zLineOffset*2) / unitCount) * 0.8
+		local zUnitOffset = ((math.abs(lines.zLineTop - lines.zLineBottom)-lines.zLineOffset*2) / unitCount) * 0.3
 		local cavTable = {}
 		local spearTable = {} 
 		local maaTable = {}
@@ -228,15 +231,47 @@ end
 function handleGoal(team)
 	if team == "team1" then
 		teams.score.team1 = teams.score.team1 + 1
+		for i, player in pairs(teams.team1) do
+			Player_SetResource(player.id, RT_Gold, teams.score.team1)
+		end
+		for i, player in pairs(teams.team2) do
+			Player_SetResource(player.id, RT_Stone, teams.score.team1)
+		end
 	end
 	if team == "team2" then
 		teams.score.team2 = teams.score.team2 + 1
+		for i, player in pairs(teams.team2) do
+			Player_SetResource(player.id, RT_Gold, teams.score.team2)
+		end
+		for i, player in pairs(teams.team1) do
+			Player_SetResource(player.id, RT_Stone, teams.score.team2)
+		end
 	end
 	local ballPosition = Entity_GetPosition(ball)
 	setCamera(ballPosition)
+	checkVictory() 
 	gameState.phase = "preparing"
 	Rule_AddOneShot(setInGame, 5)
 end	
+
+function checkVictory()
+	if teams.score.team1 >= gameState.objective then
+		for i, player in pairs(teams.team1) do
+			Core_SetPlayerVictorious(player.id, Mod_WinnerPresentation, WR_CONQUEST)
+		end
+		for i, player in pairs(teams.team2) do
+			Core_SetPlayerVictorious(player.id, Mod_WinnerPresentation, WR_CONQUEST)
+		end
+	end
+	if teams.score.team2 >= gameState.objective then
+		for i, player in pairs(teams.team2) do
+			Core_SetPlayerVictorious(player.id, Mod_WinnerPresentation, WR_CONQUEST)
+		end
+		for i, player in pairs(teams.team1) do
+			Core_SetPlayerVictorious(player.id, Mod_WinnerPresentation, WR_CONQUEST)
+		end		
+	end
+end
 
 function handleUnitOutside(groupid, itemindex, unit)
 	if gameState.phase ~= "inGame" then
@@ -334,8 +369,7 @@ function handleDamage(ctx)
 	if attackType == "cavToBall" or attackType == "spearToBall" or attackType == "manToBall" then
 		local kickDirection = getKickDirection(attackerLocation, tackledLocation)
 		local kickAngle = getKickAngle(attackerLocation, tackledLocation, kickDirection)
-		setNewBallPosition(attackerLocation, tackledLocation, tackledUnit, kickDirection, kickAngle, attackType)
-		--SGroup_DeSpawn(tackledUnit)
+		setNewBallPosition(attackerLocation, tackledLocation, tackledUnit, kickDirection, kickAngle, attackType)		
 	end
 end
 
@@ -346,6 +380,7 @@ function Mod_Start()
 		handleAgeAndResources(player.id)
 		setMarchingDrills(player.id)
 	end		
+	getAnnihil()
 	spawnLines()
 	gameState.phase = "preparing"
 	setInGame()	
@@ -421,3 +456,59 @@ function Mod_OnGameOver()
 	
 end
 
+function Mod_WinnerPresentation(playerId)	
+	-- If player is local
+	if playerId == localPlayer.id then
+		
+		-- Clear player's selection
+		Misc_ClearSelection()
+		-- Hide UI
+		Taskbar_SetVisibility(false)
+	end
+end
+
+function Mod_LoserPresentation(playerId)
+	
+	-- If player is local
+	if playerId == localPlayer.id then		
+		-- Clear player's selection
+		Misc_ClearSelection()
+		-- Hide UI
+		Taskbar_SetVisibility(false)		
+	end
+end
+
+function getAnnihil()
+	_annihilation = {
+		is_diplomacy_enabled = false,
+		is_tribute_enabled = true,
+		players_with_market = {},
+		type_map = {	-- Type map of building type to cheapest squad it can produce. Used to cache squad costs.
+			town_center 	= "villager",
+			barracks		= "spearman",
+			archery_range 	= "archer",
+			stable 			= "horseman",
+			siege_workshop 	= "springald",
+			monastery 		= "monk", 
+		},	
+		types = { -- Building types used to identify landmarks and wonders
+			landmark = "wonder",
+			wonder = "wonder_imperial_age",
+			building = "building", 
+		},                                                                                         
+		sfx = {
+			eliminated_player_ally = "Conquest_friendly_eliminated",
+			eliminated_enemy = "Conquest_enemy_eliminated",
+			victory = "mus_stinger_landmark_objective_complete_success",
+			defeat = "mus_stinger_landmark_objective_complete_fail",
+		},
+		cue = {						-- event cue shown when player is eliminated 
+			title = Loc_Empty(),
+			desc = Loc_Empty(),
+			sfx = "sfx_ui_event_queue_high_priority_play",
+			icon = "icons\\event_queue_high_priority_large",
+			template = "high_priority", 
+			style = ECV_Queue | ECV_Title,
+		},
+	}
+end
