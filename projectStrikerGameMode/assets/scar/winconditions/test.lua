@@ -189,6 +189,7 @@ function handleOnTick()
 	
 end
 
+
 function handleBall()
 	if ball == nil or gameState.phase ~= "inGame" then
 		return
